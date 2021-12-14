@@ -3,14 +3,34 @@
 ## Imbalanced Binary Classification
 
 - Precision
-  - `TP / (TP + FP)`, meaning how good a model is at predicting the positive class.
+  - `TP / (TP + FP)`
+  - Means how good a model is at predicting the positive class.
+  - Precision doesn't use `TN`.
+  - Care about the correct prediction of positive.
 - Recall
-  - `TP / (TP + FN)`, meaning
-  - `Recall == Sensitivity`
+  - `TP / (TP + FN)`
+  - Means how good a model is at predicting the positive class when the actual outcome is positive.
+  - `Recall = Sensitivity = True positive rate`
+  - Recall doesn't use `TN` too.
+  - Care about the correct prediction of positive too.
+- False positive rate
+  - `FP / (FP + TN)`
+  - Means how often a positive class is predicted when the actual outcome is negative.
+- True positive rate
+  - `TP / (TP + FN)`
 - Meaning of precision and recall
   - They don't use the true negatives, only concerned with correctly predicting the positive minority class 1.
+- ROC curve
+  - X-axis is False positive rate.
+  - Y-axis is True positive rate.
+  - Left side of x-axis is lower FP and higher TN (Good)
+  - Upper side of y-axis is higher TP and lower FN (Good)
 - Precision-Recall curve
+  - X-axis is Recall.
+  - Y-axis is Precision.
   - This should be used when there is a moderate to large class imbalance and a large skew in the class distribution.
+  - Baseline of precision-recall curve is the proportion of positive class, `P / (P + N)`.
+  - PRCAUC is the area under the precision-recall curve.
 
 ### Resource
 
