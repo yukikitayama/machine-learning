@@ -1,5 +1,6 @@
-env/
+env-machine-learning/
 .idea/
+.ipynb_checkpoints
 data/creditcard.csv
 data/fracta.csv
 data/fracta_model.csv
