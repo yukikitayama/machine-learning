@@ -77,15 +77,74 @@
 
 ## Boosting
 
+- Sequentially apply the weak classification algorithm to repeatedly modified versions of the data.
+- Weak classifier is one whose error rate is only slightly better than random guessing.
+- The final prediction is a weighted majority vote from all the weak classifiers.
+  - The weights give higher influence to the more accurate classifiers in the sequence.
+- At step m, observations misclassified by m - 1 model have their weights increased.
+  - As iterations proceed, observations difficult to predict receive ever-increasing weight.
+
 ## Gradient Boosting
+
+- Sequentially make tree with about 8 to 32 leaves, not stumps like AdaBoost.
+- Make initial guess, average of response
+  - In classification, the initial guess is log of odds, log of (number of positive / number of negative)
+- Calculate residuals between actual value and the initial guess
+  - Pseudo residual
+  - This is calculated by taking `gradient of loss function`, but it ends up with residuals.
+  - In classification, the residual is between actual response (1 or 0) and the probability made by log of odds into
+    logistic function.
+- Fit trees with the feature the data and the response the residual.
+  - In classification, leaf output value requires transformation.
+  - Transformation is `residual / (p * (1 - p))`.
+- Scale the predicted residual by a learning rate
+- Add the scaled predicted residual to the initial guess
+- Repeat
+
+### Resource
+
+- [Gradient Boost Part 3 (of 4): Classification](https://www.youtube.com/watch?v=jxuNLH5dXCs)
 
 ## XGBoost
 
 - Extreme gradient boosting
 
+### Resource
+
+- [XGBoost Part 1 (of 4): Regression](https://www.youtube.com/watch?v=OtD8wVaFm6E)
+
+## Calibration
+
+### Resource
+
+- [How and When to Use a Calibrated Classification Model with scikit-learn](https://machinelearningmastery.com/calibrated-classification-model-in-scikit-learn/)
+
 ## K Nearest Neighbor (KNN)
+
+### Resource
+
+- [scikit-learn Nearest Neighbors](https://scikit-learn.org/stable/modules/neighbors.html)
 
 ## Data
 
 - Imbalance class data
   - [Credit card fraud detection](https://www.kaggle.com/mlg-ulb/creditcardfraud)
+
+## Resource
+
+### Book
+
+- An Introduction to Statistical Learning, Springer, Gareth James/Daniela Witten/Trevor Hastie/Robert Tibshirani
+- The Elements of Statistical Learning, Springer, Trevor Hastie/Robert Tibshirani/Jerome Friedman
+
+### Video
+
+- [StatQuest](https://www.youtube.com/channel/UCtYLUTtgS3k1Fg4y5tAhLbw)
+
+### Website
+
+- [Machine Learning Mastery](https://machinelearningmastery.com/blog/)
+
+### Data
+
+- [kaggle](https://www.kaggle.com/)
