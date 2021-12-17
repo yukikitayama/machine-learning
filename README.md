@@ -107,11 +107,49 @@
 
 ## XGBoost
 
+### Big Picture
+
+- Minimize loss function and regularization term
+
+### Detail
+
 - Extreme gradient boosting
+- Start from initial guess
+- Similarity score
+  - Regression: `(sum of residuals, squared) / (number of residuals + lambda)`
+  - Classification: `sum of residuals, squared / (sum(prev prob * (1 - prev prob)) + lambda)`
+- Gain
+- Gamma
+- Output value
+- Learning rate, eta
+  - Scales down the predicted residual to be added to the initial guess
+  - Default is 0.3
+- Regularization parameter, lambda
+- Cover
+  - Determine minimum number of residuals in each leaf
+  - Denominator of similarity score formula excluding lambda.
+  - min_child_weight
+  - Default is 1.
+- Prune tree
+  - Get gain minus gamma
+  - If positive, don't prune
+  - If negative, prune
+- Find output value which minimize loss function and regularization term
+- Take derivative with respect to output value
+- Take Gradient (1st derivative) and Hessian (2nd derivative) of loss function and regularization term
+- In classification
+  - Loss function is negative log-likelihood `-[ylog(p) + (1 - y)log(1 - p)]`.
+- Approximate greedy algorithm
+  - Reduces the number of thresholds that it needs to test to make decision trees to make training fast.
+  - Divide data in quantiles, instead of testing all possible thresholds
+  - Default is about 33 quantiles.
 
 ### Resource
 
 - [XGBoost Part 1 (of 4): Regression](https://www.youtube.com/watch?v=OtD8wVaFm6E)
+- [XGBoost Part 2 (of 4): Classification](https://www.youtube.com/watch?v=8b1JEDvenQU)
+- [XGBoost Part 3 (of 4): Mathematical Details](https://www.youtube.com/watch?v=ZVFeW798-2I)
+- [XGBoost Part 4 (of 4): Crazy Cool Optimizations](https://www.youtube.com/watch?v=oRrKeUCEbq8)
 
 ## Calibration
 
@@ -131,6 +169,12 @@
   - [Credit card fraud detection](https://www.kaggle.com/mlg-ulb/creditcardfraud)
 
 ## Resource
+
+### Paper
+
+| Topic | Title | Link |
+|-------|-------|------|
+| XGBoost | XGBoost: A Scalable Tree Boosting System | https://arxiv.org/abs/1603.02754 |
 
 ### Book
 
