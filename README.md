@@ -157,6 +157,13 @@
 
 - [How and When to Use a Calibrated Classification Model with scikit-learn](https://machinelearningmastery.com/calibrated-classification-model-in-scikit-learn/)
 
+## Feature Engineering
+
+- Cyclical variables
+  - e.g. Month
+  - `feature engineered month = sin(month * (2pi / 12))`
+  - [Feature Engineering - Handling Cyclical Features](http://blog.davidkaleko.com/feature-engineering-cyclical-features.html)
+
 ## K Nearest Neighbor (KNN)
 
 - To predict test data, take K-most similar data from training data are located.
