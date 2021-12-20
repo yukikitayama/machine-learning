@@ -56,13 +56,18 @@
 
 ## Decision Tree
 
-### Classification
-- Pure
-  - A node is pure when it is predominant with a single class
-- Gini index
-  - Small when a node contains predominantly single class observations.
-  - Large when a leaf node contains a variety of classes.
-  - A node is pure when Gini index is small.
+### Pure
+
+- Used in classification with decision tree
+- A node is pure when it is predominant with a single class
+
+### Gini index
+
+- Used in classification with decision tree
+- Small when a node contains predominantly single class observations.
+- Large when a leaf node contains a variety of classes.
+- A node is pure when Gini index is small.
+
 ```python
 from collections import Counter
 from typing import List
@@ -79,9 +84,12 @@ def multi_class_gini(data: List[int]) -> float:
     return gini
 ```
 
-- Entropy
-  - Small when a node has predominant single class data, and large when it's diverse.
-  - A node is pure when the entropy is small.
+### Entropy
+
+- Used in classification with decision tree
+- Small when a node has predominant single class data, and large when it's diverse.
+- A node is pure when the entropy is small.
+
 ```python
 import math
 from collections import Counter
