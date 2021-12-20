@@ -54,6 +54,52 @@
 - [SMOTE: Synthetic Minority Over-sampling Technique](https://arxiv.org/abs/1106.1813)
 - [SMOTE for Imbalanced Classification with Python](https://machinelearningmastery.com/smote-oversampling-for-imbalanced-classification/)
 
+## Decision Tree
+
+### Classification
+- Pure
+  - A node is pure when it is predominant with a single class
+- Gini index
+  - Small when a node contains predominantly single class observations.
+  - Large when a leaf node contains a variety of classes.
+  - A node is pure when Gini index is small.
+```python
+from collections import Counter
+from typing import List
+
+def binary_gini(p: float) -> float:
+    return p * (1 - p) + (1 - p) * (1 - (1 - p))
+
+def multi_class_gini(data: List[int]) -> float:
+    counter = Counter(data)
+    proportions = [c / len(data) for c in counter.values()]
+    gini = 0
+    for proportion in proportions:
+        gini += proportion * (1 - proportion)
+    return gini
+```
+
+- Entropy
+  - Small when a node has predominant single class data, and large when it's diverse.
+  - A node is pure when the entropy is small.
+```python
+import math
+from collections import Counter
+from typing import List
+
+def binary_entropy(p: float) -> float:
+    return -1 * (p * math.log(p) + (1 - p) * math.log(1 - p))
+
+def multi_class_entropy(data: List[int]) -> float:
+    counter = Counter(data)
+    proportions = [c / len(data) for c in counter.values()]
+    entropy = 0
+    for proportion in proportions:
+        entropy += proportion * math.log(proportion)
+    entropy *= -1
+    return entropy
+```
+
 ## Bagging
 
 - We wanna make a low variance model.
