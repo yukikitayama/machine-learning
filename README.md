@@ -54,6 +54,28 @@
 - [SMOTE: Synthetic Minority Over-sampling Technique](https://arxiv.org/abs/1106.1813)
 - [SMOTE for Imbalanced Classification with Python](https://machinelearningmastery.com/smote-oversampling-for-imbalanced-classification/)
 
+## Neural Network
+
+### Big Picture
+
+- Current model makes predictions
+- Calculate loss
+- Take gradients of the loss
+- Update weights
+
+### Loss Functions
+
+- Hinge loss
+  - Binary classification
+  - Target values are expected to be -1 or 1.
+  - In TensorFlow, if you provide 0 or 1 target value, TensorFlow automatically converts to -1 or 1.
+  - Output layer should use hyperbolic tangent activation function `Dense(1, activation='tanh')` to convert a single
+    value in the range [-1, 1].
+
+### Resource
+
+- [How to Choose Loss Functions When Training Deep Learning Neural Networks](https://machinelearningmastery.com/how-to-choose-loss-functions-when-training-deep-learning-neural-networks/)
+
 ## Decision Tree
 
 - [Gini index and Entropy](https://github.com/yukikitayama/machine-learning/blob/master/decision-tree/gini_index_entropy.ipynb)
@@ -227,6 +249,8 @@ def multi_class_entropy(data: List[int]) -> float:
 
 ## Calibration
 
+- Match the predicted probabilities with the expected distribution of probabilities for each class.
+
 ### Resource
 
 - [How and When to Use a Calibrated Classification Model with scikit-learn](https://machinelearningmastery.com/calibrated-classification-model-in-scikit-learn/)
@@ -237,6 +261,33 @@ def multi_class_entropy(data: List[int]) -> float:
   - e.g. Month
   - `feature engineered month = sin(month * (2pi / 12))`
   - [Feature Engineering - Handling Cyclical Features](http://blog.davidkaleko.com/feature-engineering-cyclical-features.html)
+
+## Support Vector Machine
+
+- Algorithm
+  - Target has +1 or -1.
+  - Output negative or positive values depending on which side of the decision boundary it falls.
+  - No penalty if an observation is classified correctly and distance from the hyperplane is larger than the margin.
+  - Distance from the hyperplane is a measure of confidence.
+- Hinge loss function
+  - Penalize misclassified data linearly, penalize correctly classified data if low confidence, no penalize the 
+    correctly classified with confidence.
+  - `L(y) = max(0, 1 - t * y)`
+    - t is target +1 or -1
+    - y is SVM classifier score
+  - e.g. t: 1, y: 2, L(y): max(0, 1 - 1 * 2) = 0, classified correctly, and no penalty
+  - e.g. t: 1, y: 0.5, L(y): max(0, 1 - 1 * 0.5) = 0.5, classified correctly because y is positive and t is 1, but 
+    penalty 0.5
+  - e.g. t: -1, y: 0.5, L(y): max(0, 1 - (-1) * 0.5) = 1.5, classified incorrectly because y is positive and t is 
+    negative, and penalty 1.5
+- Regularization parameter `C`
+  - Scaling the hinge loss.
+  - Small `C` means strong regularization, more tolerant misclassification.
+  - Large `C` could have over-fitting, try to correctly classify outliers, smaller margin.
+  
+### Resource
+
+- [Understanding Hinge Loss and the SVM Cost Function](https://programmathically.com/understanding-hinge-loss-and-the-svm-cost-function/)
 
 ## K Nearest Neighbor (KNN)
 
@@ -291,6 +342,7 @@ def multi_class_entropy(data: List[int]) -> float:
 - [x] Review boosting
 - [x] Review Gini and Entropy (2021-12-19)
 - [x] Review KNN
+- [ ] Review calibration
 - [ ] Read XGBoost paper 4. system design
 - [ ] Check SMOTE
 - [ ] Check AB testing
