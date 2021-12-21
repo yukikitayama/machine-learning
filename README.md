@@ -152,7 +152,7 @@ def multi_class_entropy(data: List[int]) -> float:
 - We wanna make a low variance model.
 - Suppose we have n independent observations z1, ..., zn, each with variance sigma squared.
 - The mean of the observations is z bar.
-- The variance of the mean is z bar divided by n
+- The variance of the mean z bar is sigma squared divided by n
 - This variance of mean is smaller than the variance of each observation, because it's divided by n.
 - So if we make multiple functions from each training set, and take average of the functions, and then the prediction
   will be low variance model.
