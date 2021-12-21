@@ -176,15 +176,18 @@ def multi_class_entropy(data: List[int]) -> float:
 
 - [Gradient Boost Part 3 (of 4): Classification](https://www.youtube.com/watch?v=jxuNLH5dXCs)
 
-## XGBoost
+## XGBoost (Extreme Gradient Boosting)
 
 ### Big Picture
 
-- Minimize loss function and regularization term
+- The objective function to minimize include regularization term as well as loss function to prevent over-fitting.
+- Use **shrinkage &eta;** to scale down the influence of each individual tree to prevent over-fitting.
+- Use **column subsampling** like random forest to prevent over-fitting.
+- Use **quantile** to approximate computationally expensive algorithm to make things efficient.
+- Use default direction to allow tree split to be aware data is **sparse** to be good for real world data.
 
 ### Detail
 
-- Extreme gradient boosting
 - Start from initial guess
 - Similarity score
   - Regression: `(sum of residuals, squared) / (number of residuals + lambda)`
@@ -282,3 +285,14 @@ def multi_class_entropy(data: List[int]) -> float:
 ### Data
 
 - [kaggle](https://www.kaggle.com/)
+
+## Action items
+
+- [x] Review boosting
+- [x] Review Gini and Entropy (2021-12-19)
+- [x] Review KNN
+- [ ] Read XGBoost paper 4. system design
+- [ ] Check SMOTE
+- [ ] Check AB testing
+  - https://www.analyticsvidhya.com/blog/2020/10/ab-testing-data-science/
+  - https://www.kaggle.com/tammyrotem/ab-tests-with-python
