@@ -307,6 +307,14 @@ def multi_class_entropy(data: List[int]) -> float:
 - [Develop k-Nearest Neighbors in Python From Scratch](https://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/)
 - [scikit-learn Nearest Neighbors](https://scikit-learn.org/stable/modules/neighbors.html)
 
+## K-Means Clustering
+
+- Pre-specify the number of clusters `K`.
+- Minimize the sum of the within-cluster variations over all K clusters.
+- The most common choice for the within-cluster variation is to use `squared Euclidean distance`.
+  - The sum of all the pairwise squared Euclidean distance within kth cluster, divided by the number of data in kth 
+    cluster.
+
 ## Data
 
 - Imbalance class data
@@ -343,6 +351,7 @@ def multi_class_entropy(data: List[int]) -> float:
 - [x] Review Gini and Entropy (2021-12-19)
 - [x] Review KNN
 - [ ] Review calibration
+- [ ] Read ISL 10.3.1 K-Means Clustering
 - [ ] Read XGBoost paper 4. system design
 - [ ] Check SMOTE
 - [ ] Check AB testing
