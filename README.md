@@ -325,7 +325,8 @@ df['sin_days'] = np.sin((df['days_passed_since_new_year'] - 1) * (2 * np.pi / 36
 ## Clustering
 
 - `Centroid` is a data point representing the center of a cluster.
-- `sklearn.datasets.make_blobs` is a convenient function to generate synthetic clusters.
+  - In each kth cluster, take mean in each feature.
+- `from sklearn.datasets import make_blobs, make_moons` are convenient functions to generate synthetic clusters.
 
 ## K-Means Clustering
 
@@ -338,6 +339,32 @@ df['sin_days'] = np.sin((df['days_passed_since_new_year'] - 1) * (2 * np.pi / 36
   initialization.
   - Commonly run several initializations of the entire k-means algorithm and find the lowest error.
   - By default, `scikit-learn` runs k-means clustering 10 times, and return the one with the lowest error.
+
+### Elbow method
+
+- Choose `K` by seeing the reduction of residual sum of squares
+
+### Silhouette Coefficient
+
+- Values range between -1 and 1.
+- Larger numbers indicate samples are closer to their clusters than they are to other clusters.
+  - It doesn't work if the clusters are nonspherical.
+- `Silhouette coefficient = (b - a) / max(a, b)`
+  - `a`: The mean distance between a sample and all other points in the same class.
+  - `b`: The mean distance between a sample and all other points in the next nearest cluster.
+- `scikit-learn` takes average of silhouette coefficients of all samples into one score
+  - Pick the `K` with the max silhouette coefficient.
+- [scikit-learn 2.3.10.5. Silhouette Coefficient](https://scikit-learn.org/stable/modules/clustering.html#silhouette-coefficient)
+
+### Adjusted Rand Index (ARI)
+
+- Evaluate clustering by using both predicted cluster label and true cluster label.
+- `sklearn.metrics.adjusted_rand_score` returns close to 0.0 when labeling is random and close to 1.0 when the 
+  clusterings are identical.
+
+## DBSCAN
+
+- Density-Based Spatial Clustering of Applications with Noise
 
 ## Data
 
