@@ -177,6 +177,14 @@ def multi_class_entropy(data: List[int]) -> float:
 - At step m, observations misclassified by m - 1 model have their weights increased.
   - As iterations proceed, observations difficult to predict receive ever-increasing weight.
 
+## Feature Importance
+
+- It measures, in average, how much RSS (regression) or Gini (classification) are decreased due to splits over a given
+  predictor.
+  - Big reduction means the feature is important.
+- Average over all the trees made by bagged bootstrapped samples.
+- In `scikit-learn`, the importance is shown by each feature importance normalized as their sum to 1.
+
 ## Gradient Boosting
 
 - Sequentially make tree with about 8 to 32 leaves, not stumps like AdaBoost.
@@ -262,6 +270,13 @@ def multi_class_entropy(data: List[int]) -> float:
   - `feature engineered month = sin(month * (2pi / 12))`
   - [Feature Engineering - Handling Cyclical Features](http://blog.davidkaleko.com/feature-engineering-cyclical-features.html)
 
+```python
+# Suppose there's Pandas DataFrame df with datetime index
+# This date starts from 1, not 0, and goes to 365
+df['days_passed_since_new_year'] = [dt.timetuple().tm_yday for dt in df.index.to_pydatetime()]
+df['sin_days'] = np.sin((df['days_passed_since_new_year'] - 1) * (2 * np.pi / 365))
+```
+
 ## Support Vector Machine
 
 - Algorithm
@@ -307,6 +322,11 @@ def multi_class_entropy(data: List[int]) -> float:
 - [Develop k-Nearest Neighbors in Python From Scratch](https://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/)
 - [scikit-learn Nearest Neighbors](https://scikit-learn.org/stable/modules/neighbors.html)
 
+## Clustering
+
+- `Centroid` is a data point representing the center of a cluster.
+- `sklearn.datasets.make_blobs` is a convenient function to generate synthetic clusters.
+
 ## K-Means Clustering
 
 - Pre-specify the number of clusters `K`.
@@ -314,6 +334,10 @@ def multi_class_entropy(data: List[int]) -> float:
 - The most common choice for the within-cluster variation is to use `squared Euclidean distance`.
   - The sum of all the pairwise squared Euclidean distance within kth cluster, divided by the number of data in kth 
     cluster.
+- K-mean clustering is called `nondeterministic`, meaning cluster assignment could change depending on the random
+  initialization.
+  - Commonly run several initializations of the entire k-means algorithm and find the lowest error.
+  - By default, `scikit-learn` runs k-means clustering 10 times, and return the one with the lowest error.
 
 ## Data
 
