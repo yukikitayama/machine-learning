@@ -366,6 +366,27 @@ df['sin_days'] = np.sin((df['days_passed_since_new_year'] - 1) * (2 * np.pi / 36
 
 - Density-Based Spatial Clustering of Applications with Noise
 
+## Hierarchical Clustering
+
+- Algorithm
+  - Normalize features to make them equally important
+  - Make a `dendrogram`, the higher the height, the more the data are different. Horizontal cut defines clusters.
+  - Treat each data as its own cluster
+  - Fuse the two clusters that are most similar to each other
+    - `Euclidean distance` is commonly used to measure similarity.
+    - `Linkage` is used within a cluster to calculate single score for similarity.
+      - `Average linkage` calculates all pairwise similarity scores within a cluster and take average
+      - `Complete linkage` calcuates all pairwise similarity scores and take the largest score.
+      - Average and complete linkage tend to yield more balanced clusters.
+  - Repeat until all the data belong to one single cluster.
+- If the true clusters are not nested, hierarchical clustering could not well represent clusters.
+- `Agglomerative clustering`
+  - Agglomerate means to collect or gather into a cluster or mass.
+
+### Resource
+
+- [scikit-learn hierarchical clustering](https://scikit-learn.org/stable/modules/clustering.html#hierarchical-clustering)
+
 ## Data
 
 - Imbalance class data
@@ -402,7 +423,9 @@ df['sin_days'] = np.sin((df['days_passed_since_new_year'] - 1) * (2 * np.pi / 36
 - [x] Review Gini and Entropy (2021-12-19)
 - [x] Review KNN
 - [ ] Review calibration
-- [ ] Read ISL 10.3.1 K-Means Clustering
+- [x] Read ISL 10.3.1 K-Means Clustering
+- [x] Read ISL 10.3.2 Hierarchical Clustering
+- [ ] Read ISL 9 Support Vector Machines
 - [ ] Read XGBoost paper 4. system design
 - [ ] Check SMOTE
 - [ ] Check AB testing
