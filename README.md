@@ -255,6 +255,39 @@ def multi_class_entropy(data: List[int]) -> float:
 - [XGBoost Part 3 (of 4): Mathematical Details](https://www.youtube.com/watch?v=ZVFeW798-2I)
 - [XGBoost Part 4 (of 4): Crazy Cool Optimizations](https://www.youtube.com/watch?v=oRrKeUCEbq8)
 
+## Support Vector Machine (SVM)
+
+- `Support vectors`
+  - The data points closest to the hyperplane.
+  - Define the separating line by calculating margins.
+- `Hyperplane`
+  - Divide teh dataset into classes.
+- `Margin`
+  - The smallest distance between a given separating hyperplane and a data.
+  - A gap between the two lines, one line from one side of support vectors, and the other line from the other class 
+    support vectors.
+  - Large margin is good. Small margin is bad.
+- `Kernel trick`
+  - Function to transform the input space to a higher dimensional space to find a better segregating way.
+  - Convert nonseparable problem to separable problem by adding more dimension.
+  - `Linear kernel`
+  - `Polynomial kernel`
+  - `Radial basis function kernel (RBF)`
+
+### Maximal Margin Classifier
+
+- When the data is separable by a hyperplane, there will exist an infinite number of such hyperplane.
+  - Because they can be produced by shifting a bit or rotating a bit.
+- `Maxima margin classifier` is a way to define a single classifier among them.
+- Find a separating hyperplane which ahs the largest minimum distance to the data.
+- Overfits when number of features is many.
+- If a separating hyperplane does not exist, then there is no maximal margin classifier, and we need to use `support 
+  vector classifier` instead by `soft margin`.
+
+### Resource
+
+- [Support Vector Machines with Scikit-learn](https://www.datacamp.com/community/tutorials/svm-classification-scikit-learn-python)
+
 ## Calibration
 
 - Match the predicted probabilities with the expected distribution of probabilities for each class.
@@ -443,7 +476,7 @@ df['sin_days'] = np.sin((df['days_passed_since_new_year'] - 1) * (2 * np.pi / 36
 - [ ] Review calibration
 - [x] Read ISL 10.3.1 K-Means Clustering
 - [x] Read ISL 10.3.2 Hierarchical Clustering
-- [ ] Read ISL 9 Support Vector Machines
+- [ ] Read ISL from 9.2 Support Vector Machines
 - [ ] Read XGBoost paper 4. system design
 - [ ] Check SMOTE
 - [ ] Check AB testing
