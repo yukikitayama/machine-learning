@@ -255,6 +255,33 @@ def multi_class_entropy(data: List[int]) -> float:
 - [XGBoost Part 3 (of 4): Mathematical Details](https://www.youtube.com/watch?v=ZVFeW798-2I)
 - [XGBoost Part 4 (of 4): Crazy Cool Optimizations](https://www.youtube.com/watch?v=oRrKeUCEbq8)
 
+## AdaBoost
+
+### Big Picture
+
+- Make an accurate prediction by weighted summing up many small decision trees.
+
+### Algorithm
+
+- Initialize equal weight `w_i = 1 / N` for each observation.
+- Iterate 1 to M
+  - Fit decision tree `G_m(x)` to the training data with weights `w_i`.
+    - This decision tree classifier is `stump`, two-terminal node classification tree.
+  - Compute weighted error rate.
+  - Compute weight &alpha;.
+  - Rescale weight `w_i` by exp(&alpha;) for observations misclassified by `G_m(x)`.
+- Get weighted sum of `G_m(x)`.
+- If it classifies, `Discrete AdaBoost`. If it returns a real-valued prediction, it's `Real AdaBoost`.
+
+### Detail
+
+- AdaBoost minimizes `exponential loss criterion` by a forward-stagewise additive modeling.
+  - AdaBoost is not optimizing training set misclassification error.
+
+### Resource
+
+- [AdaBoost, Clearly Explained](https://www.youtube.com/watch?v=LsK-xG1cLYA)
+
 ## Support Vector Machine (SVM)
 
 - `Support vectors`
@@ -348,6 +375,8 @@ df['sin_days'] = np.sin((df['days_passed_since_new_year'] - 1) * (2 * np.pi / 36
 - When K is large
   - Classifier is low variance but high bias.
   - Decision boundary is close to linear
+- The training error is always 0 for `K = 1`.
+- The effective number of parameters is `N / K`
 
 ### Resource
 
@@ -442,6 +471,7 @@ df['sin_days'] = np.sin((df['days_passed_since_new_year'] - 1) * (2 * np.pi / 36
 
 - Imbalance class data
   - [Credit card fraud detection](https://www.kaggle.com/mlg-ulb/creditcardfraud)
+- [Elements of statistical learning data](https://hastie.su.domains/ElemStatLearn/)
 
 ## Resource
 
@@ -478,6 +508,8 @@ df['sin_days'] = np.sin((df['days_passed_since_new_year'] - 1) * (2 * np.pi / 36
 - [x] Read ISL 10.3.2 Hierarchical Clustering
 - [ ] Read ISL from 9.2 Support Vector Machines
 - [ ] Read XGBoost paper 4. system design
+- [ ] Read ESL from 2.4 Statistical Decision Theory
+- [ ] Read ESL from 10.6 Loss Functions and Robustness
 - [ ] Check SMOTE
 - [ ] Check AB testing
   - https://www.kaggle.com/tammyrotem/ab-tests-with-python
