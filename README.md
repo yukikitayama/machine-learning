@@ -277,6 +277,11 @@ def multi_class_entropy(data: List[int]) -> float:
 
 - AdaBoost minimizes `exponential loss criterion` by a forward-stagewise additive modeling.
   - AdaBoost is not optimizing training set misclassification error.
+- Use loss function `absolute loss` for regression and `binomial or multinomial deviance loss` for classification.
+  - Not `squared-error loss` and `exponential loss`.
+- Steepest descent
+  - `g`: Gradient of loss function with respect to function
+  - `f_m = f_m-1 - scaler * g_m`
 
 ### Resource
 
@@ -509,7 +514,7 @@ df['sin_days'] = np.sin((df['days_passed_since_new_year'] - 1) * (2 * np.pi / 36
 - [ ] Read ISL from 9.2 Support Vector Machines
 - [ ] Read XGBoost paper 4. system design
 - [ ] Read ESL from 2.4 Statistical Decision Theory
-- [ ] Read ESL from 10.6 Loss Functions and Robustness
+- [ ] Read ESL from 10.10.3 Implementation of Gradient Boosting
 - [ ] Check SMOTE
 - [ ] Check AB testing
   - https://www.kaggle.com/tammyrotem/ab-tests-with-python
