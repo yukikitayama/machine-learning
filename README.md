@@ -382,6 +382,7 @@ df['sin_days'] = np.sin((df['days_passed_since_new_year'] - 1) * (2 * np.pi / 36
   - Decision boundary is close to linear
 - The training error is always 0 for `K = 1`.
 - The effective number of parameters is `N / K`
+- Results in large errors if the dimension of the input space is high
 
 ### Resource
 
@@ -472,6 +473,15 @@ df['sin_days'] = np.sin((df['days_passed_since_new_year'] - 1) * (2 * np.pi / 36
     - `Two-sample T-test`, statistical significance to test whether the average difference between the two groups.
     - Set significance level `alpha` like 0.05.
 
+## Bayes Classifier
+
+- Classify to the most probable class using the conditional distribution
+- `Bayes rate` is the error rate of Bayes classifier.
+
+## Regression
+
+- Conditional expectation, the best prediction of Y at any point X = x is the conditional mean
+
 ## Data
 
 - Imbalance class data
@@ -513,7 +523,7 @@ df['sin_days'] = np.sin((df['days_passed_since_new_year'] - 1) * (2 * np.pi / 36
 - [x] Read ISL 10.3.2 Hierarchical Clustering
 - [ ] Read ISL from 9.2 Support Vector Machines
 - [ ] Read XGBoost paper 4. system design
-- [ ] Read ESL from 2.4 Statistical Decision Theory
+- [ ] Read ESL from 2.6.3 Function Approximation
 - [ ] Read ESL from 10.10.3 Implementation of Gradient Boosting
 - [ ] Check SMOTE
 - [ ] Check AB testing
