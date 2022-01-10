@@ -481,6 +481,8 @@ df['sin_days'] = np.sin((df['days_passed_since_new_year'] - 1) * (2 * np.pi / 36
 ## Regression
 
 - Conditional expectation, the best prediction of Y at any point X = x is the conditional mean
+- `Linear basis expansions` is `f(x) = sum of h(x) * theta`, meaning before linear, applying functions or 
+  transformations to the input vector x.
 
 ## Data
 
@@ -519,6 +521,7 @@ df['sin_days'] = np.sin((df['days_passed_since_new_year'] - 1) * (2 * np.pi / 36
 - [x] Review Gini and Entropy (2021-12-19)
 - [x] Review KNN
 - [ ] Review calibration
+- [ ] Kaggle credit card fraud detection
 - [x] Read ISL 10.3.1 K-Means Clustering
 - [x] Read ISL 10.3.2 Hierarchical Clustering
 - [ ] Read ISL from 9.2 Support Vector Machines
