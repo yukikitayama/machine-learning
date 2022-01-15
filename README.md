@@ -305,6 +305,8 @@ def multi_class_entropy(data: List[int]) -> float:
   - `Linear kernel`
   - `Polynomial kernel`
   - `Radial basis function kernel (RBF)`
+    - RBF has centroids `mu` and scales `lambda` that have ti be determined.
+    - The Gaussian kernel is popular.
 
 ### Maximal Margin Classifier
 
@@ -455,6 +457,32 @@ df['sin_days'] = np.sin((df['days_passed_since_new_year'] - 1) * (2 * np.pi / 36
 
 - [scikit-learn hierarchical clustering](https://scikit-learn.org/stable/modules/clustering.html#hierarchical-clustering)
 
+## Dimension Reduction
+
+### PCA
+
+- xxx
+
+### t-SNE
+
+- Maybe pronounce it "tee-snee".
+- `t-distributed stochastic neighbor embedding`
+- Project data into a low dimensional space so that the clustering in the high dimensional space is preserved.
+  - e.g. You can see clusters in 2D scatter plot, apply t-SNE, even in 1D number line, preserve the same clusters.
+- [StatQuest: t-SNE, Clearly Explained](https://www.youtube.com/watch?v=NEaUSP4YerM)
+
+### Truncated Singular Value Decomposition (Truncated SVD)
+
+- xxx
+
+## Outlier
+
+- [How to Remove Outliers for Machine Learning](https://machinelearningmastery.com/how-to-use-statistics-to-identify-outliers-in-data/)
+- Use interquartile range (IQR)
+- Calculate 25th and 75th percentile, multiply a threshold (e.g. 1.5 or 3), and if the data is beyond the threshold, 
+  remove the data from the training data
+  - The lower the threshold is, the more data are removed as outliers, but it comes with information loss.
+
 ## A/B Testing
 
 - Test incremental changes (UX changes, new features, ranking and page load times) to compare pre and post-modification 
@@ -483,6 +511,13 @@ df['sin_days'] = np.sin((df['days_passed_since_new_year'] - 1) * (2 * np.pi / 36
 - Conditional expectation, the best prediction of Y at any point X = x is the conditional mean
 - `Linear basis expansions` is `f(x) = sum of h(x) * theta`, meaning before linear, applying functions or 
   transformations to the input vector x.
+
+## Maximum Likelihood Estimation
+
+- Suppose random samples `y` come from a density `P_theta(y)` with parameter `theta`.
+- Make an equation of sum of `log(P_theta(y))`
+- Assume that the most reasonable value for `theta` are those for which the probability of the observed sample is 
+  largest.
 
 ## Data
 
@@ -526,7 +561,7 @@ df['sin_days'] = np.sin((df['days_passed_since_new_year'] - 1) * (2 * np.pi / 36
 - [x] Read ISL 10.3.2 Hierarchical Clustering
 - [ ] Read ISL from 9.2 Support Vector Machines
 - [ ] Read XGBoost paper 4. system design
-- [ ] Read ESL from 2.6.3 Function Approximation
+- [ ] Read ESL from 3.4 Shrinkage Methods
 - [ ] Read ESL from 10.10.3 Implementation of Gradient Boosting
 - [ ] Check SMOTE
 - [ ] Check AB testing
