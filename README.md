@@ -72,6 +72,11 @@
   - Output layer should use hyperbolic tangent activation function `Dense(1, activation='tanh')` to convert a single
     value in the range [-1, 1].
 
+### Weight Decay
+
+- ESL Chapter 11
+- Penalize by the sum-of-squares of the parameters like Ridge.
+
 ### Resource
 
 - [How to Choose Loss Functions When Training Deep Learning Neural Networks](https://machinelearningmastery.com/how-to-choose-loss-functions-when-training-deep-learning-neural-networks/)
@@ -519,6 +524,27 @@ df['sin_days'] = np.sin((df['days_passed_since_new_year'] - 1) * (2 * np.pi / 36
 - Assume that the most reasonable value for `theta` are those for which the probability of the observed sample is 
   largest.
 
+### Ridge regression
+
+- When there are correlated variables in a linear regression model, a large positive coefficient appear, but it's
+  canceled by a similarly large negative coefficient on a correlated variable. It causes high variance. But ridge
+  imposes a size constraint on the coefficients, so ridge can alleviate the problem by correlated variables.
+- The intercept `Beta_0` is left out of the penalty term.
+- `Singular value decomposition (SVD)`
+  - If you apply `SVD` to input matrix `X`, then `X = U D V_transposed`. 
+  - `D` is p * p (p is the number of features) diagonal matrix containing `singular values` of `X`. These singular 
+    values are scaling factors for ridge shrinkage. If singular value is small, a large shrinkage happens by Ridge.
+
+### Lasso
+
+- Why does Lasso make parameters zero, but Ridge not zero but near zero?
+  - Suppose there are only two parameters. RSS has elliptical contours centers at least squares estimate.
+  - Ridge has disk, and Lasso has diamond.
+  - When the elliptical contour hit the constraint region, because diamond has corners, in Lasso one of the parameters 
+    is zero, unlike Ridge disk.
+
+![Lasso and ridge](https://github.com/yukikitayama/machine-learning/blob/master/image/esl_3_4_3_discussion_lasso_ridge.png)
+
 ## Data
 
 - Imbalance class data
@@ -561,7 +587,7 @@ df['sin_days'] = np.sin((df['days_passed_since_new_year'] - 1) * (2 * np.pi / 36
 - [x] Read ISL 10.3.2 Hierarchical Clustering
 - [ ] Read ISL from 9.2 Support Vector Machines
 - [ ] Read XGBoost paper 4. system design
-- [ ] Read ESL from 3.4 Shrinkage Methods
+- [ ] Read ESL from 3.4.3 Discussion
 - [ ] Read ESL from 10.10.3 Implementation of Gradient Boosting
 - [ ] Check SMOTE
 - [ ] Check AB testing
