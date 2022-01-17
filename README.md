@@ -545,6 +545,12 @@ df['sin_days'] = np.sin((df['days_passed_since_new_year'] - 1) * (2 * np.pi / 36
 
 ![Lasso and ridge](https://github.com/yukikitayama/machine-learning/blob/master/image/esl_3_4_3_discussion_lasso_ridge.png)
 
+### Elastic Net
+
+- `lambda * sum of (alpha * beta^2 + (1 - alpha) * |beta|`
+- Elastic Net selects variables like the lasso.
+- It also shrinks together the coefficients of correlated predictors like ridge.
+
 ## Data
 
 - Imbalance class data
@@ -587,7 +593,7 @@ df['sin_days'] = np.sin((df['days_passed_since_new_year'] - 1) * (2 * np.pi / 36
 - [x] Read ISL 10.3.2 Hierarchical Clustering
 - [ ] Read ISL from 9.2 Support Vector Machines
 - [ ] Read XGBoost paper 4. system design
-- [ ] Read ESL from 3.4.3 Discussion
+- [ ] Read ESL from 4 Linear Methods for Classification
 - [ ] Read ESL from 10.10.3 Implementation of Gradient Boosting
 - [ ] Check SMOTE
 - [ ] Check AB testing
