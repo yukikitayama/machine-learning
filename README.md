@@ -1,5 +1,10 @@
 # Machine Learning
 
+## Note
+
+- [Linear Discriminant Analysis](https://github.com/yukikitayama/machine-learning/blob/master/note/linear_discriminant_analysis.md)
+- [Cross-Validation](https://github.com/yukikitayama/machine-learning/blob/master/note/cross_validation.md)
+
 ## Imbalanced Binary Classification
 
 - Precision
@@ -593,7 +598,7 @@ df['sin_days'] = np.sin((df['days_passed_since_new_year'] - 1) * (2 * np.pi / 36
 - [x] Read ISL 10.3.2 Hierarchical Clustering
 - [ ] Read ISL from 9.2 Support Vector Machines
 - [ ] Read XGBoost paper 4. system design
-- [ ] Read ESL from 4 Linear Methods for Classification
+- [ ] Read ESL from 4.3.1 Regularized Discriminant Analysis
 - [ ] Read ESL from 10.10.3 Implementation of Gradient Boosting
 - [ ] Check SMOTE
 - [ ] Check AB testing
