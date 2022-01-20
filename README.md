@@ -598,7 +598,7 @@ df['sin_days'] = np.sin((df['days_passed_since_new_year'] - 1) * (2 * np.pi / 36
 - [x] Read ISL 10.3.2 Hierarchical Clustering
 - [ ] Read ISL from 9.2 Support Vector Machines
 - [ ] Read XGBoost paper 4. system design
-- [ ] Read ESL from 4.3.1 Regularized Discriminant Analysis
+- [ ] Read ESL from 4.4.2 Example: South African Heart Disease
 - [ ] Read ESL from 10.10.3 Implementation of Gradient Boosting
 - [ ] Check SMOTE
 - [ ] Check AB testing
