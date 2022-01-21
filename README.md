@@ -2,7 +2,8 @@
 
 ## Note
 
-- [Linear Discriminant Analysis](https://github.com/yukikitayama/machine-learning/blob/master/note/linear_discriminant_analysis.md)
+- [Linear Discriminant Analysis (LDA)](https://github.com/yukikitayama/machine-learning/blob/master/note/linear_discriminant_analysis.md)
+- [Logistic regression](https://github.com/yukikitayama/machine-learning/blob/master/note/logistic_regression.md)
 - [Cross-Validation](https://github.com/yukikitayama/machine-learning/blob/master/note/cross_validation.md)
 
 ## Imbalanced Binary Classification
