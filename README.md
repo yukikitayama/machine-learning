@@ -582,14 +582,27 @@ df['sin_days'] = np.sin((df['days_passed_since_new_year'] - 1) * (2 * np.pi / 36
 
 - An Introduction to Statistical Learning, Springer, Gareth James/Daniela Witten/Trevor Hastie/Robert Tibshirani
 - The Elements of Statistical Learning, Springer, Trevor Hastie/Robert Tibshirani/Jerome Friedman
+- Mathematical Methods in the Physical Sciences, Mary L Boas
+- Introduction to Linear Algebra, Gilbert Strang, Wellesley-Cambridge Press
+  - [Introduction to Linear Algebra, Fifth Edition (2016)](https://math.mit.edu/~gs/linearalgebra/)
+  - Graduate students textbook
 
 ### Video
 
 - [StatQuest](https://www.youtube.com/channel/UCtYLUTtgS3k1Fg4y5tAhLbw)
+- [3Blue1Brown](https://www.youtube.com/3blue1brown)
+  - Series of videos developing mathematical intuition
 
 ### Website
 
 - [Machine Learning Mastery](https://machinelearningmastery.com/blog/)
+- [3Blue1Brown](https://www.3blue1brown.com/)
+  - Series of videos developing mathematical intuition
+
+### Coursera
+
+- [Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning)
+- [Mathematics for Machine Learning Specialization](https://www.coursera.org/specializations/mathematics-machine-learning)
 
 ### Data
 
@@ -605,7 +618,9 @@ df['sin_days'] = np.sin((df['days_passed_since_new_year'] - 1) * (2 * np.pi / 36
 - [x] Read ISL 10.3.1 K-Means Clustering
 - [x] Read ISL 10.3.2 Hierarchical Clustering
 - [ ] Read ISL from 9.2 Support Vector Machines
-- [x] Read XGBoost paper 4. system design
+- [x] Read XGBoost paper
+- [x] Read SMOTE paper
+- [ ] Do Coursera Mathematics for Machine Learning: Linear Algebra, week 2
 - [ ] Read ESL from 5.5 Automatic Selection of the Smoothing Parameters
 - [ ] Read ESL from 10.10.3 Implementation of Gradient Boosting
 - [ ] Check SMOTE
