@@ -18,7 +18,9 @@ A collection of Markdown files where I took note to understand the concept of ma
 ## Book
 
 - An Introduction to Statistical Learning, Springer, Gareth James/Daniela Witten/Trevor Hastie/Robert Tibshirani
+  - "ISL". I used in Columbia University machine learning classes.
 - The Elements of Statistical Learning, Springer, Trevor Hastie/Robert Tibshirani/Jerome Friedman
+  - "ESL". I used in Columbia University machine learning classes.
 - Mathematical Methods in the Physical Sciences, Mary L Boas
 - Introduction to Linear Algebra, Gilbert Strang, Wellesley-Cambridge Press
   - [Introduction to Linear Algebra, Fifth Edition (2016)](https://math.mit.edu/~gs/linearalgebra/)
@@ -39,7 +41,9 @@ A collection of Markdown files where I took note to understand the concept of ma
 ## Coursera
 
 - [Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning)
+  - Understand neural network
 - [Mathematics for Machine Learning Specialization](https://www.coursera.org/specializations/mathematics-machine-learning)
+  - Understand linear algebra
 
 ## Data
 
@@ -65,7 +69,7 @@ A collection of Markdown files where I took note to understand the concept of ma
 - [x] Read ISL 10.3.2 Hierarchical Clustering
 - [ ] Read ISL from 9.2 Support Vector Machines
 - [x] Read XGBoost paper
-- [x] Read SMOTE paper
+- [ ] Read SMOTE paper
 - [ ] Do Coursera Mathematics for Machine Learning: Linear Algebra, week 2
 - [ ] Read ESL from 5.5 Automatic Selection of the Smoothing Parameters
 - [ ] Read ESL from 10.10.3 Implementation of Gradient Boosting
