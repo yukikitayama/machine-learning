@@ -70,7 +70,8 @@ A collection of Markdown files where I took note to understand the concept of ma
 - [ ] Read ISL from 9.2 Support Vector Machines
 - [x] Read XGBoost paper
 - [ ] Read SMOTE paper
-- [ ] Do Coursera Mathematics for Machine Learning: Linear Algebra, week 2
+- [ ] Coursera Mathematics for Machine Learning: Linear Algebra
+  - Week 4 needs note
 - [ ] Read ESL from 5.5 Automatic Selection of the Smoothing Parameters
 - [ ] Read ESL from 10.10.3 Implementation of Gradient Boosting
 - [ ] Check SMOTE
