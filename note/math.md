@@ -72,6 +72,7 @@
   - A matrix gives us an identity matrix
   - `A^(-1)A = I`. `A^(-1)` is an inverse matrix of `A`
   - Inverse matrix can be applied from either left or right to still get the identity matrix
+  - If we see matrix is something to transform a vector, the inverse matrix does `reverse transformation`
 - `Triangular matrix`
   - Everything below the body diagonal is zero. 
 - `Echelon form`
@@ -100,11 +101,68 @@
   - `A B` is a vector in A's frame.
   - `B^(-1) A B` is a vector back in B's frame.
     - This does the translation from my world to the world of the new basis system.
-- `Orthogonal matrix`
+  - `So long as basis vectors are orthogonal to each other`, transforming a vector to a new coordinate system is just
+    taking the project (dot product) of a vector with each of the basis vectors.
 - `Orthonormal basis set`
   - A set of unit length basis vectors that are all perpendicular to each other.
   - `a_i.a_j = 0 if i != j (orthogonal) and = 1 if i == j (unit length)`
+- `Orthogonal matrix`
+  - The matrix composed of `orthonormal basis set`
+  - The determinant of an orthogonal matrix is either 1 or -1, because all the basis vectors scale space by a factor of 
+    one.
+  - `A^(T) = A^(-1)`. If `A^(T)` is the inverse, we can get the identity matrix by `A^(T) A`
+  - Rows of the orthogonal matrix are orthonormal
+  - Columns of the orthogonal matrix are orthonormal.
+  - Transpose matrix of an orthonormal basis vector set is another orthogonal basis vector set
+- Why is the orthonormal vector set important?
+  - It's important when we transform our data.
+  - It means we want our transformation matrix to be an orthogonal matrix
+  - It means the inverse is easy to compute.
+  - It means transformation is reversible.
+  - It means projection is just a dot product (okay to use dot product because basis vectors are orthogonal)
+  - It means the determinant is one (after rearranging the basis vectors in right order)
 - `Gram-schmidt process`
-  - The goal is to get an orthonormal basis set.
-  - Takes a set of vectors and forms an orthonormal basis.
+  - It's about how to get an orthonormal basis set from non-orthogonal and non-unit length vector set.
+  - It assumes that 
+    1. we have linearly independent vectors that spans the space we are interested in
+      - We can check whether the vectors are linearly independent by checking the determinant is not 0.
+      - If the vectors are linearly dependent, the determinant is 0.
+    2. The vectors are not orthogonal to each other or not of unit length
+  - Sequentially takes a vector and forms an orthonormal basis from the previous vectors.
+    - Normalize the first vector to be of unit length, which is the first orthonormal vector.
+      - The normalization is just `v_1 / |v_1| = e_1` 
+    - Get projection of the second vector onto the first unit vector, and subtract this from the second vector, and 
+      normalize it. It gives us the second orthonormal vector.
+      - The projection is `(v_2 . e_1) e_1`.
+      - The subtraction is `v_2 - (v_2 . e_1) e_1 = u_2`
+      - The normalization is `u_2 / |u_2| = e_2`
+    - Get projection of the third vector onto the first unit vector and the second unit vector, and subtract both from
+      the third vector, and normalize it. It gives us the third orthonormal vector.
+    - Repeat until all the n vectors are processed.
   - Determine the dimension of the space spanned by the basis vectors.
+- `Eigen-`
+  - Means characteristic
+  - We take a transform, and we look for the vectors who are still laying on the same span as before, and then we 
+    measure how much their length has changed.
+- `Eigenvalue`
+  - Value of eigenvectors. If after transformation, the length doesn't change, the eigenvalue is 1.
+  - If after transformation, eigenvector length doubled, eigenvalue is 2.
+  - The amount that each eigenvector has been stretched in a linear transformation.
+- `Eigenvector`
+  - When transforming (scaling, rotations, and shears), some vectors end up lying on the same line (Same direction and
+    same length), while any other vectors changed
+  - These unchanged vectors are special. They are characteristic of a particular transformation
+  - People call them eigenvectors.
+  - Vectors which lie along the same span both before and after applying a linear transform to a space.
+- `Pure shear`
+  - No scaling, no rotation, and are unchanged
+- Special eigen-cases
+  1. Uniform scaling
+    - Scale by the same amount in each direction
+    - Any vector is an eigenvector
+  2. 180 degrees rotation
+    - Stay the same span but pointing in the opposite direction
+    - All vectors are eigenvectors, but eigenvalues are -1.
+  3. Horizontal shear and vertical scaling
+    - Horizontal vector is an eigenvector and its eigenvalue is 1.
+    - There is another vector which is eigenvector but not easy to spot.
