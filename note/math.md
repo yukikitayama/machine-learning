@@ -166,3 +166,55 @@
   3. Horizontal shear and vertical scaling
     - Horizontal vector is an eigenvector and its eigenvalue is 1.
     - There is another vector which is eigenvector but not easy to spot.
+- Calculating eigenvectors
+  - `Ax = lambda * x`
+    - `A`: Transformation matrix, n dimensional transform, n by n square matrix
+    - `lambda`: Scalar, not matrix or vector
+    - `x`: Eigenvector, n dimensional vector
+  - Goal is to find values of `x` that make the two sides equal
+  - `(A - lambda I)x = 0`
+  - Take determinant of `A - lambda I` to test if a matrix operation will result in 0.
+  - `det(A - lambda I) = 0`
+- `Characteristic polynomial`
+  - Evaluation of `det(A - lambda I) = 0`
+  - Let A be `[[a, b], [c, d]]`
+  - `det([[a, b], [c, d]] - [[lambda, 0], [0, lambda]])`
+  - `det([[a - lambda, b], [c, d - lambda]])`
+  - `(a - lambda)(d - lambda) - bc` because of [2 by 2 matrix determinant equation](https://en.wikipedia.org/wiki/Determinant#2_%C3%97_2_matrices)
+  - `ad - a lambda - d lambda + lambda^2 - bc = 0`
+  - `lambda^2 - (a + d)lambda + (ad - bc) = 0`. This is the `characteristic polynomial`.
+  - Eigenvalues are the solutions of the above equation.
+  - Eigenvectors are found by plugging the solved eigenvalues into the original expression `(A - lambda I)x = 0`
+- `Eigenbasis`
+  - Change a matrix to a basis where transformation `T` becomes diagonal
+  - People do this because diagonal matrix is easy to do n-power calculation.
+- `Diagonal matrix`
+  - `D = C^(-1) T C`
+    - `C`: Eigenvectors. First column of `C` is the first eigenvector, and so on.
+    - `C^(-1)`: Inverse of eigenvectors
+    - `T`: Transformation matrix
+    - `D`: Diagonal matrix. Each element in diagonal is eigenvalue, `[[lambda_1, 0], [0, lambda_2]]`
+  - `T = C D C^(-1)`
+  - `T^n = C D^n C(-1)`
+- `PageRank`
+  - The ranking of websites by find the probability that a person will be at the end of a certain process
+  - Decide which order to display the websites when they returned from search.
+  - Assume that the importance of a website is related to its links to and from other websites
+  - `Power iteration method`
+    - Repeatedly multiplying a randomly selected initial guess vector by a matrix
+    - Good at dealing with large system.
+  - `Dumping factor, d`
+    - Probability that someone randomly types in a web address, rather than clicking on a link on the current page.
+    - Add a small probability that a person does not follow any link on a webpage and visit another at random
+    - This is to avoid stuck in a website because it doesn't have outgoing link, which disrupts PageRank calculation.
+    - `M = d L + (1 - d) / n * J`
+      - `J`: n by n matrix where every element is one
+      - `n`: Number of websites
+      - If `d` is 1, iteration always use transformation matrix `L`
+      - If `d` is 0, `L` disappear, and always visit a website at random because `1 / n`
+  - `L r = r`
+    - Consider this equation as `L` is a transformation matrix, and eigenvalue `1` (multiplied to right-hand side)
+    - `L`: Matrix which has columns which represent the probability of leaving a website for any other websites, sum to
+      one
+    - `r`: A vector that eventually contains the probabilities for each website that a person stay there.
+  - 
