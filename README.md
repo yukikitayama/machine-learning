@@ -22,6 +22,7 @@ A collection of Markdown files where I took note to understand the concept of ma
 - The Elements of Statistical Learning, Springer, Trevor Hastie/Robert Tibshirani/Jerome Friedman
   - "ESL". I used in Columbia University machine learning classes.
 - Mathematical Methods in the Physical Sciences, Mary L Boas
+  - Linear algebra and calculus
 - Introduction to Linear Algebra, Gilbert Strang, Wellesley-Cambridge Press
   - [Introduction to Linear Algebra, Fifth Edition (2016)](https://math.mit.edu/~gs/linearalgebra/)
   - Graduate students textbook
@@ -44,6 +45,10 @@ A collection of Markdown files where I took note to understand the concept of ma
   - Understand neural network
 - [Mathematics for Machine Learning Specialization](https://www.coursera.org/specializations/mathematics-machine-learning)
   - Understand linear algebra
+
+## Udemy
+
+- [Complete linear algebra: theory and implementation in code](https://www.udemy.com/course/linear-algebra-theory-and-implementation/)
 
 ## Data
 
