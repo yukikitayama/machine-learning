@@ -233,25 +233,3 @@
       one. It has eigenvalue 1.
     - `r`: A vector that eventually contains the probabilities for each website that a person stay there.
 
-## Calculus
-
-- Select a function which we think might be used to represent the data
-- Selecting a function is the creative essence of science.
-- The study of how these functions change with respect to their input variables.
-- A set of tools for describing the relationship between a function and the changes in its variables.
-- `Gradient`
-  - A single point as the local gradient, tangent line that touches the curve at a point.
-  - e.g. `Acceleration` is the local gradient of a speed-time (y-x) graph
-  - Take a continuous function and describe its slope at every point by constructing a new function (its `derivative`)
-- `Rise over run`
-  - `Gradient = rise / run`
-  - How much the straight line function f(x) changes divided by the amount the variable x changes
-  - Rise is the amount of change in y, and run is the amount of change in x
-
-![Rise over run](https://github.com/yukikitayama/machine-learning/blob/master/image/rise_over_run.png)
-
-- `Derivative`
-  - x is extremely close to 0.
-  - It's not zero, because we cannot divide by 0.
-
-![Derivative](https://github.com/yukikitayama/machine-learning/blob/master/image/derivative.png)
