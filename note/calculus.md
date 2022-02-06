@@ -41,3 +41,12 @@
 - Without chain rule, you need to substitute `B(x)` to `A(X)`, and then take derivative of `A(B(x))` w.r.t `x`.
 - With chain rule, it's a product of derivative w.r.t each input
   - `d/dx A(B(x)) = d/dB A(B) * d/dx B(x)`
+
+- Multivariate system
+  - Calculus to systems with many variables.
+  - Use curly partial symbol (d) to differentiate multivariate system
+- `Total derivative`
+  - Suppose `f(x, y, z)` and `x(t)`, `y(t)`, and `z(t)`
+    - x, y, and z are actually all themselves a function of a single other parameter t
+  - `df(x, y, z)/dt = df/dx dx/dt + df/dy dy/dt + df/dz dz/dt`
+    - The derivative with respect to a new variable `t` is the sum of the chains of the other 3 variables.
