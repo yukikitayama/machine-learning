@@ -13,8 +13,20 @@
   - `sum of a_i * b_i`
 - In geometry
   - `cos(theta between a and b) * |a| * |b|`
+- `Law of cosines`
+  - About how to calculate the third length of a triangle when a triangle is not a right angle triangle, 
+  - By two lengths and the angle between them
+  - `c^2 = a^2 + b^2 - 2ab cos(theta)`
+  - Pythagorean theorem is a special case of law of cosines when theta is 90 degree so cos(90 degree) term will be 0.
 
 ## Vector length
 
 - Also called magnitude or norm
 - Square root of dot product of the same vector.
+- `||a - b||^2 = (a - b)^T (a - b) = ||a||^2 + ||b||^2 - 2 a^T b`
+  - Because vector length is a dot product of itself.
+  - ^T to make dot product possible for the dimensionality
+
+## Python
+
+- `np.linalg.norm(VECTOR)` returns vector length.

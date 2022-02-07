@@ -50,3 +50,18 @@
     - x, y, and z are actually all themselves a function of a single other parameter t
   - `df(x, y, z)/dt = df/dx dx/dt + df/dy dy/dt + df/dz dz/dt`
     - The derivative with respect to a new variable `t` is the sum of the chains of the other 3 variables.
+
+## Jacobian
+
+- The Jacobian of a function of many variables `f(x1, x2, x3, ...)` is a row vector where each entry is the partial 
+  derivative of `f` w.r.t. each one of those variables in turn.
+- If `f(x, y, z)`, then `J = [df/dx, df/dy, df/dz]`
+- When we give the Jacobian a specific coordinate, the Jacobian returns a vector pointing in the direction of steepest
+  slope of the function.
+  - i.e. The Jacobian is a vector that we can calculate for each location of a function which points in the direction of
+    the steepest uphill slope.
+- The steeper the slope is, the greater the magnitude of Jacobian at that point.
+  - When we put the contour lines, large Jacobians exist where the contour lines are tightly packed.
+  - The peaks of the mountains and in the bottom of the valleys or on a wide flat plains, Jacobians (gradients) are 
+    small.
+- Jacobian points uphill.
