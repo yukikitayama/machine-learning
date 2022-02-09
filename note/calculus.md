@@ -65,3 +65,13 @@
   - The peaks of the mountains and in the bottom of the valleys or on a wide flat plains, Jacobians (gradients) are 
     small.
 - Jacobian points uphill.
+
+### Jacobian Matrix
+
+- Jacobian matrix describes functions that take a vector as an input and give a vector as the output.
+- Functions are often non-linear but may still be smooth
+  - If we zoom in, we can consider each little region of space to be approximately linear
+  - Add up all the contributions from the `Jacobian determinants` at each point in space,
+  - Calculate the change in the size of a region after transformation.
+- Jacobina matrix is a stack of row vectors
+  - Each row vector is derivatives w.r.t each variable.
