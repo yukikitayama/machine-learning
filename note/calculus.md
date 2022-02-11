@@ -75,3 +75,18 @@
   - Calculate the change in the size of a region after transformation.
 - Jacobina matrix is a stack of row vectors
   - Each row vector is derivatives w.r.t each variable.
+
+## Hessian
+
+- Get the second order derivatives of a function into a matrix
+  - While for the Jacobian we get the first order derivatives of a function into a vector
+- If the determinant of Hessian is positive, then we are dealing with either a maximum or a minimum.
+  - If the first term in diagonal (top left) is positive, we get a minimum
+  - If it's negative, we get a maximum.
+- If the Hessian determinant is negative, gradient is 0, and a saddle point.
+
+### Hessian matrix
+
+- `n by n square matrix` where `n` is the number of variables in a function.
+- Symmetrical across the leading diagonal.
+- Can copy top right triangle region into bottom left.
