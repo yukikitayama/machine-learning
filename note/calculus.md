@@ -90,3 +90,17 @@
 - `n by n square matrix` where `n` is the number of variables in a function.
 - Symmetrical across the leading diagonal.
 - Can copy top right triangle region into bottom left.
+
+## Total Derivative
+
+- A multi-variable function `f(x, y, z)` and each variable is a function of `t`.
+- The derivative of `f` w.r.t `t` is `df/dt = df/dx dx/dt + df/dy dy/dt + df/dz dz/dt`
+- The reason why we do this is because computers are good at this piecewise calculation.
+- `df/dt = df/dx . dx/dt`. Derivative of multi-variable function `f` w.r.t `t` is a dot product of two partial 
+  derivative vectors.
+  - `f`: `f(x) = f(x1, x2, x3, ...)`
+  - `.`: Dot product
+  - `df/dx`: A vector, `[df/dx1, df/dx2, df/dx3, ...]`
+  - `dx/dt`: A vector, `[dx1/dt, dx2/dt, dx3/dt, ...]`
+
+
