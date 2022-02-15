@@ -139,3 +139,17 @@
 - `dC/db = dC/da da/dz dz/db`
   - Take gradient of cost function w.r.t. bias
 
+## Taylor Series
+
+- Approach to make approximations to functions.
+- Also called `power series`
+  - Series are composed of coefficients in front of increasing powers of x.
+  - `g(x) = a + bx + cx^2 + dx^3 + ...`
+  - Each term we add improves the approximation
+  - Often we are able to see a pattern in the coefficients.
+- Many applications of Taylor series make use of just the first few terms of the series as a good enough approximation
+  for a certain application.
+- `Truncated series`
+  - Short sections of the series.
+  - e.g. second order approximation
+
