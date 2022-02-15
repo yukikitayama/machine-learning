@@ -103,4 +103,39 @@
   - `df/dx`: A vector, `[df/dx1, df/dx2, df/dx3, ...]`
   - `dx/dt`: A vector, `[dx1/dt, dx2/dt, dx3/dt, ...]`
 
+## Neural Network
+
+- `a^(1) = sigma(w a^(0) + b)`
+  - `a`: Activity
+  - `w`: Weight
+  - `b`: Bias
+  - `sigma()`: Activation function, sigmoid so sigma.
+    - e.g. `tanh(x) = (e^x - e^(-x)) / (e^x + e^(-x))`
+- `a^(L) = sigma(W^(L) . a^(L - 1) + b^(L))`
+  - `L`: Current layer
+  - `L - 1`: Previous layer
+  - `a`: Vector
+  - `W`: Matrix
+  - `b`: Vector
+
+## Backpropagation
+
+- Chain Rule in Neural Network
+- `Cost function`
+  - `C = Sum of (a_i - y_i)^2`
+  - `a_i` is the output of neural network
+  - `y_i` is the label, desired output
+- Take gradient of cost function
+  - Gradient points at upward, but we want to minimize cost, 
+  - So flip the sign of gradient of cost function.
+  - Derivative w.r.t. weight `W` and bias `b`
+- Ingredients for backpropagation
+  - `z = wa + b`
+  - `a = sigma(z)`
+  - `C = (a - y)^2`
+    - `C` is cost function
+- `dC/dw = dC/da da/dz dz/dw`
+  - Take gradient of cost function w.r.t. weight
+- `dC/db = dC/da da/dz dz/db`
+  - Take gradient of cost function w.r.t. bias
 

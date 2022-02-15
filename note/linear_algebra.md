@@ -7,7 +7,7 @@
   - `a^(T)(b + c) = a^(T)b + a^(T)c` where all are vectors
 - Dot product is not associative
   - `a^(T)(b^(T)c) != (a^(T)b)^(T)c`
-  - Bur matrix multiplication is associative!
+  - But matrix multiplication is associative
   - `A(B C) = (A B)C`
 - In algebra
   - `sum of a_i * b_i`
