@@ -123,6 +123,25 @@
   1. A set of vectors are linearly independent
   2. A set of vectors span all the subspace.
 
+## Matrix
+
+- By convention, use `M` for rows and `N` for columns
+- `MR`. `N`i`C`e guy
+- If `M` is a M by N matrix, `C(M)` is a column space of the matrix, and `C(M) is in R^M`, because there are `N` columns
+  and each column has `M` elements.
+  - `R(M) is in R^N`, row space of a matrix M is in R^N
+- `Skew-symmetric`
+  - A square matrix which is symmetric across the diagonal, but flips the signs, and diagonal all need to be 0.
+  - `A = -A^T`
+  - Symmetric matrix is `A = A^T`
+- `Shifting a matrix`
+  - `A + lambda I = C`
+  - Diagonal elements are scaled, but off-diagonal elements do not change.
+  - e.g. `[[1, 2], [2, 4]] + 3[[1, 0], [0, 1]] = [[4, 2], [2, 7]]`
+- `Hermitian transpose`
+  - Transpose for complex matrix.
+  - It's to transpose a matrix and to flip signs of complex numbers.
+
 ## Python
 
 - `np.linalg.norm(VECTOR)` returns vector length.
