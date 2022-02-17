@@ -142,6 +142,33 @@
   - Transpose for complex matrix.
   - It's to transpose a matrix and to flip signs of complex numbers.
 
+## Diagonal
+
+- In statistics, diagonal elements of a covariance matrix is extracted as a vector to represent the variance of each 
+  variable.
+- Extracting diagonal elements of a matrix is different from `diagonalizing a matrix`
+  - `Diagonalizing a matrix` is a matrix decomposition from eigen decomposition.
+
+## Trace
+
+- Sum of diagonal elements of a matrix
+- Trace is only defined in square matrix, while diagonal is defined in any shape of matrix.
+- Used in `Frobenius Norm (Frobenius Dot Product)` and `Normalizing eigenvalues or singular values in eigendecomposition
+  or singular value decomposition`.
+
+## Broadcasting
+
+- Illegal in traditional linear algebra, but it's often used recently in machine learning
+- `[[1, 2], [3, 4]] + [[1], [2]]` is broadcast to `[[1, 2], [3, 4]] + [[1, 1], [2, 2]] = [[2, 3], [5, 6]]`
+
+## Matrix Multiplication
+
+- `AB`
+  - A left-multiplies B
+  - A pre-multiplies B
+  - B right-multiplies A
+  - B post-multiplies A
+
 ## Python
 
 - `np.linalg.norm(VECTOR)` returns vector length.

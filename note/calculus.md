@@ -152,4 +152,18 @@
 - `Truncated series`
   - Short sections of the series.
   - e.g. second order approximation
+- A way to re-express functions by using a series of increasing powers of x.
+- If we know everything about function at one place, we also know everything about it everywhere
+  - If a function is well-behaved, meaning continuous and differentiable as many times as you want.
+- Taylor series says that if you know everything about the function at any point, then you can reconstruct the function 
+  anywhere
+- `g(x) = sum of (f^n(p) / n!) * (x - p)^n from n = 0 to infinity`
+  - If we set `p` to 0 in Taylor series, it becomes `Maclaurin Series`
+
+### Maclaurin Series
+
+- Use information from a function `f(x)` where `x = 0`
+- nth term in the approximation is the nth derivative of `f(x)` evaluated at `x = 0` divided by `n!` n factorial 
+  multiplied by `x` to the power of `n`.
+- `g(x) = sum of (f^n(0) / n!) * x^n from n = 0 to infinity`.
 
