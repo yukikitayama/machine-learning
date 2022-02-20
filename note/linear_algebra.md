@@ -169,6 +169,39 @@
   - B right-multiplies A
   - B post-multiplies A
 
+![Four ways to think about matrix multiplication](C:\Users\ykitayama\PycharmProjects\machine-learning\image\matrixMult_4ways.png)
+
+- Matrix multiplication with a diagonal matrix is useful in eigen decomposition and singular value multiplication
+  - `AD`, diagonal matrix right-multiplies A, scales A by column by diagonal elements
+  - `DA`, diagonal matrix left-multiplies A, scales A by row by diagonal elements
+- `Order-of-operations`
+  - `(L I V E)^T = E^T V^T I^T LT`
+  - Transpose each matrix, flip the order, and then matrix multiplication
+  - When applying an operation to multiplied matrices, need to reverse the matrix order.
+
+## Matrix-vector multiplication
+
+- Result is always a vector
+  - Resulting vector always has the same orientation as input vector
+  - Length of the resulting vector is determined by input matrix
+- `Aw` (`A` is matrix. `w` `is vector)
+  - Resulting vector is a weighted combinations of the `columns` of `A`
+- `w^T A` (`A` is matrix. `w` `is vector)
+  - Resulting vector is a weighted combinations of the `rows` of `A`
+- When the input matrix is a symmetric matrix, the resulting vector has the same elements.
+
+## Transformation Matrix
+
+- `Matrix @ input vector = output vector`
+  - Typically, with this equation, matrix transforms the input vector by rotating and stretching.
+  - When the matrix is the `pure rotation matrix`, matrix only transforms the input vector by rotating, no stretching.
+    - `[[cos(theta), -sin(theta)], [sin(theta), cos(theta)]]`
+  - When it doesn't rotate but only stretches, `eigen things` happen.
+    - This phenomenon can be written as `Av = lambda v`, fundamental eigenvalue equation
+    - The input vector `v` is `eigenvector` of the matrix
+    - The scalar `lambda` is `eigenvalue` of the matrix
+    - This matrix multiplication results in the same result by multiplying a vector by a scalar
+
 ## Python
 
 - `np.linalg.norm(VECTOR)` returns vector length.
