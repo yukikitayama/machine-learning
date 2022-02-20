@@ -31,6 +31,11 @@
 
 - Element-wise multiplication
 - Only valid for the two vectors which have the same number of elements.
+- Python
+  - `np.multiply(a, b)`
+  - `a * b`
+  - Where a and b have the same shape.
+- Element-wise multiplication is used in joint probability in statistics.
 
 ## Vector Cross-Product
 
@@ -201,6 +206,44 @@
     - The input vector `v` is `eigenvector` of the matrix
     - The scalar `lambda` is `eigenvalue` of the matrix
     - This matrix multiplication results in the same result by multiplying a vector by a scalar
+
+## Symmetric Matrix
+
+- The symmetric matrix given by `A^T A (or A A^T)` is `covariance matrix` in statistics.
+  - Diagonal elements of the symmetric matrix (covariance matrix) is variances in each data
+  - Off-diagonal elements are covariance between each data (covariance is un-normalized correlation)
+  - The difference from `correlation matrix` is `correlation matrix` is scaled, but `covariance matrix` is not.
+- `S = (A + A^T) / 2`
+  - Additive method to get symmetric matrix
+  - `/ 2` because diagonal element will be double
+  - `A` needs to be `square matrix`.
+- `A^T A = S (or A A^T = S)`
+  - Multiplicative method to get symmetric matrix.
+
+```
+[
+    [a, b, c],
+    [d, e, f]
+]
+(2 by 3)
+
+@
+
+[
+    [a, d],
+    [b, e],
+    [c, f]
+]
+(3 by 2)
+
+=
+
+[
+    [a^2 + b^2 + c^2, ad + be + cf],
+    [ad + be + cf, a^2 + b^2 + c^2]
+]
+(2 by 2)
+```
 
 ## Python
 
