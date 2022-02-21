@@ -153,6 +153,8 @@
   variable.
 - Extracting diagonal elements of a matrix is different from `diagonalizing a matrix`
   - `Diagonalizing a matrix` is a matrix decomposition from eigen decomposition.
+- Standard multiplication of diagonal matrix with itself and Hadamard multiplication of diagonal matrix with itself 
+  produce the same result, and the result is also diagonal matrix.
 
 ## Trace
 
@@ -244,6 +246,19 @@
 ]
 (2 by 2)
 ```
+
+### Combined Symmetric Matrices
+
+- Sum (Element-wise sum) and Hadamard multiplication (Element-wise multiplication) of two symmetric matrices produces 
+  another symmetric matrix
+  - Because sum and Hadamard are element-wise operations, so they preserve the input symmetry.
+- Matrix multiplication of 2 symmetric matrices does not product a symmetric matrix
+  - Because the output matrix is made by different combination of rows and columns from input 2 symmetric matrices.
+
+![Multiplication symmetric matrices](https://github.com/yukikitayama/machine-learning/tree/master/image/multiplication_symmetric_matrices.png)
+
+- But if the input symmetric matrices are `2 by 2 constant diagonal matrix`, multiplication produces another symmetric
+  matrix.
 
 ## Python
 
