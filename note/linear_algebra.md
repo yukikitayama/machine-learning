@@ -260,6 +260,28 @@
 - But if the input symmetric matrices are `2 by 2 constant diagonal matrix`, multiplication produces another symmetric
   matrix.
 
+## Frobenius Dot Product
+
+- Something between the 2 same shape matrices.
+- 3 Methods to compute `frobenius dot product`
+  - Element-wise multiplication, and sum all elements.
+  - `Vectorize` both matrices, and compute vector dot product.
+  - (Most common and computationally efficient way) `tr(A^T B) = <A, B>_F`, taking trace (taking diagonal elements) of 
+    `A^T B`.
+
+## Matrix Norm
+
+- `Frobenius norm`, most common measure of matrix magnitude, or `norm`.
+  - `norm(A) = sqrt(<A, A>_f) = sqrt(tr(A^T A))`
+  - Also called `Euclidean norm`.
+- Most commonly used measure of distance of `similarity (Inverse of distance)` between 2 matrices.
+
+## Vectorizing a Matrix
+
+- Concatenate `columns` of a matrix
+  - `[[a, c, e], [b, d, e]] = [a, b, c, d, e, f] as column vector`
+  - 
+
 ## Python
 
 - `np.linalg.norm(VECTOR)` returns vector length.
