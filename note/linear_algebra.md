@@ -274,13 +274,89 @@
 - `Frobenius norm`, most common measure of matrix magnitude, or `norm`.
   - `norm(A) = sqrt(<A, A>_f) = sqrt(tr(A^T A))`
   - Also called `Euclidean norm`.
-- Most commonly used measure of distance of `similarity (Inverse of distance)` between 2 matrices.
+  - Square all individual matrix elements, and add them together, and take the square root.
+  - Most commonly used measure of distance of `similarity (Inverse of distance)` between 2 matrices.
+- `Induced 2-norm (or 2-norm)`
+  - How much `A` scales vector `x`
+  - `||A||_p = sup(||Ax||_p / ||x||_p), x != 0 vector`
+  - If `A` is pure rotation matrix (meaning A is orthogonal matrix), induced 2-norm will be 1, because A doesn't change
+    the magnitude
+- `Schatten p-norm`
+  - Let `sigma` be the singular values of the matrix
+  - `||A||_p = ( sum of sigma^p )^(1 / p) from sigma_0 to the last sigma`
+  - Sum of all the singular values of the matrix
+  - Sum of all singular values is p=1, called the Schatten 1-norm
 
 ## Vectorizing a Matrix
 
 - Concatenate `columns` of a matrix
   - `[[a, c, e], [b, d, e]] = [a, b, c, d, e, f] as column vector`
-  - 
+
+## Self-Adjoint Matrix
+
+- Let `A` be the square symmetric matrix m by m
+- Let `v` and `w` be the different vectors with the same size m by 1
+- `A` is the `self-adjoint matrix` if `Av . w = v . Aw (dot products)`.
+- `(Av)^T w = v^T A^T w = v^T A w`
+
+## Matrix Asymmetry Index
+
+- Asymmetric, or skewed-symmetric.
+- `a_i = ||tilda A|| / ||A||`
+  - Ratio of norm, `A` is a matrix
+  - `tilda A = (A - A^T) / 2`
+  - Interpret that when `A` is a symmetric matrix, `tilda A` is 0, so matrix asymmetry index `a_i` is 0.
+  - Perfectly skewed-symmetric matrix gives matrix asymmetry index 1.
+- Perfectly skewed-symmetric matrix is a matrix whose diagonal elements are 0 and off-diagonal elements are sign flipped
+  - e.g. `[[0, 1], [-1, 0]]`
+- Symmetric matrix is given by `(A + A^T) / 2`
+- Skewed-symmetric matrix is given by `(A - A^T) / 2`
+
+## Rank
+
+- Rank of a matrix is a single number about the amount of the information the matrix has.
+- Rank is a non-negative integer, from 0.
+- `max(r) = min(m, n)`. Maximum possible rank of a matrix is smaller of number of rows or columns
+- Rank is a property of a matrix, not only column or row.
+- `Full rank matrix` if A is m by m and rank(A) is m.
+- `Full column matrix` if A is m by n, and m > n, and rank(A) is n
+- `Full row rank` if A is m by n, and m < n, and rank(A) is m.
+- If rank(A) where A is m by n matrix, and rank(A) < m or n
+  - `Reduced rank`
+  - `Rank deficient`
+  - `Degenerate matrix`
+  - `Low-rank matrix`
+  - `Singular` if A is square matrix
+  - `Non-invertable matrix` if A is square matrix
+- Rank is dimensionality of information
+- Rank of a matrix is the largest number of columns (or rows) that can form a `linearly independent set`
+- Rank is used to test whether a matrix has the inverse, because only full rank matrix is invertible.
+- Rank is used in PCA, because rank tells us how much information is contained in a large multivariate dataset.
+
+### Computing Rank
+
+- Count the number of columns in a linearly independent set
+  - Visual `guess` work for small matrix to know whether it's a linearly independent set
+  - Solve `systems of simultaneous linear equations` to check if it's a linearly independent set.
+- Apply row reduction to reduce matrix to `echelon form` and count the number of `pivots`.
+- Compute the `singular value decomposition` and count the number of `non-zero singular values`.
+  - This is the way that software implements and uses to compute rank of a matrix.
+- When a matrix is large, rank depends on characteristics of the matrix and `threshold` that software uses, because of
+  computing `rounding error`.
+- Generally it's safe to assume that a matrix of random numbers haa the maximum possible rank.
+  - e.g. `rank(random matrix 4 by 6) = 4`
+- `rank(A + B) <= rank(A) + rank(B)`
+- `rank(AB) <= min(rank(A), rank(B))`
+- `rank(A) = rank(A^T A) = rank(A^T) = rank(A A^T)`
+  - `A^T A` spans the same space as `A`
+  - `A^T A` has the same dimensionality as `A`
+  - `A^T A` has the same singular values (squared) as `A`
+- `rank(A) = rank(A^T A)` and if `rank(A)` is `full-rank matrix`, `A^T A` is a `square symmetric full-rank matrix` used 
+  in statistics.
+
+### Shifting to Convert Rank-Deficient Matrix to Full-Rank Matrix
+
+- xxx
 
 ## Python
 
