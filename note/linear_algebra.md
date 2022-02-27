@@ -361,6 +361,20 @@
 - Make a full-rank matrix `B = A + lambda * I`
   - `I` is an identity matrix
 
+## Space
+
+### Column Space
+
+- Column space of a matrix is a set of all vectors that can be obtained by any weight linear combination of all the 
+  columns in the matrxi
+- `C(A) = {b_1 a_1 + ... + b_n a_n} = span({a_1, ..., a_n}); b_i are the member of real numbers`
+  - `a_i` is a column of a matrix `A`.
+  - Span of all the columns
+  - `Range` of the columns in matrix A.
+- Important question is whether a vector is contained in the column space of a matrix
+  - `v <- C(A); <- is notation of contained or member of`
+  - `v` and `C(A)` need to be in the same dimension.
+
 ## Python
 
 - `np.linalg.norm(VECTOR)` returns vector length.
