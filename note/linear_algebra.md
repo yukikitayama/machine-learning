@@ -356,7 +356,10 @@
 
 ### Shifting to Convert Rank-Deficient Matrix to Full-Rank Matrix
 
-- xxx
+- Suppose `A` is a reduced-rank matrix
+- Pick a small lambda e.g. `lambda = 0.01`
+- Make a full-rank matrix `B = A + lambda * I`
+  - `I` is an identity matrix
 
 ## Python
 
