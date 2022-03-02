@@ -398,6 +398,44 @@
 - A vector in null space of a matrix is orthogonal to columns in the matrix, because null space of a matrix is a dot
   product between a vector and columns in a matrix.
 
+### Left-Null Space
+
+- `N(A^T)`
+- `A^T v = 0`
+- Left-null space `N(A^T)` is orthogonal to the column space of the matrix `C(A)`.
+- Dimensionality of column space `C(A)` plus dimensionality of left-null space `N(A^T)` adds up to `ambient` 
+  dimensionality.
+
+### Dimension
+
+- When a matrix `A` has `M` rows and `N` columns
+  - Column space of the matrix has `M` dimension, because a column is a `M` elements vector
+  - `dim(C(A)) + dim(N(A^T)) = M`
+    - Dim of column space of `A` plus dim of left-null space of `A` must be `M`
+  - `dim(C(A^T)) + dim(N(A^T)) = N`
+    - Dim of row space of `A` (because `C(A^T)` is `R(A)`) plus dim of null space of `A` must be `N`
+  - These are `orthogonal complements`
+
+## Ax = b
+
+- `Ax = b` in linear algebra
+  - `A` is known, `x` is unknown, `b` is known
+- `Ax = b` in statistics
+  - `X beta = y`
+  - `X` is `design matrix`, `beta` is `regression coefficients` vector, `y` is `observed data`.
+
+## Ax = 0
+
+- Meaning of `(A - lambda I) x = 0`
+  - `A - lambda I` is shifted version of a matrix
+  - `lambda` is `eigenvalue`
+  - `x` is `eigenvector`
+- Application of `(A - lambda I) x = 0`
+  - `Principal component analysis (PCA)`
+  - `Generalized eigen decomposition (GED)`
+  - `Singular value decomposition (SVD)`
+  - `Linear discriminant analysis (LDA)`
+
 ## Python
 
 - `np.linalg.norm(VECTOR)` returns vector length or called magnitude
