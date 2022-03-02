@@ -366,7 +366,7 @@
 ### Column Space
 
 - Column space of a matrix is a set of all vectors that can be obtained by any weight linear combination of all the 
-  columns in the matrxi
+  columns in the matrix
 - `C(A) = {b_1 a_1 + ... + b_n a_n} = span({a_1, ..., a_n}); b_i are the member of real numbers`
   - `a_i` is a column of a matrix `A`.
   - Span of all the columns
@@ -375,6 +375,29 @@
   - `v <- C(A); <- is notation of contained or member of`
   - `v` and `C(A)` need to be in the same dimension.
 
+### Row Space
+
+- `R(A) = C(A^T)`
+
+### Null Space
+
+- `Trivial way`
+  - Multiplying 0 matrix. e.g. `[[3, 2], [5, 4]] @[[0], [0]] = [[0], [0]]`
+- `Non-trivial way`
+  - Multiplying a vector to matrix in order to make it a 0 vector not in a `trivial way`
+  - So not all the elements in the vector are 0. At least 1 element in vector is non-zero.
+- `N(A)`, null space of `A`, is the set of all vectors `{v}` such that `Av = 0 vector` and `v != 0 vector`.
+- A matrix with a null space has columns forming linearly dependent set
+- A matrix with empty null space has columns that form linearly independent set.
+- If a vector is not in the null space of a matrix, after multiplying transformation matrix to the vector, you still
+  get a non-zero vector
+- If a vector is in the null space of a matrix, any transformation matrix multiplication is meaningless, because it
+  always leads to 0 vector.
+- Eigendecomposition uses `null space` of a matrix to find the eigenvectors of a matrix by computing eigen values and 
+  determine a vector which is in the null space of the matrix.
+- A vector in null space of a matrix is orthogonal to columns in the matrix, because null space of a matrix is a dot
+  product between a vector and columns in a matrix.
+
 ## Python
 
-- `np.linalg.norm(VECTOR)` returns vector length.
+- `np.linalg.norm(VECTOR)` returns vector length or called magnitude
