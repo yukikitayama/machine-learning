@@ -436,6 +436,36 @@
   - `Singular value decomposition (SVD)`
   - `Linear discriminant analysis (LDA)`
 
+## Echelon Form
+
+- `Reduced row echelon form`
+  - `RREF` or `rref(A)`
+  - All the pivots are 1
+  - Elements above, below and to the left of pivots are all 0.
+    - Right can be non-zero, but won't be above any pivots
+  - Pivots need to be ordered from top left to bottom right
+
+## Pivots
+
+- Elements which have all 0s below and to the left in a matrix.
+- Non-zero value
+- Number of pivots is `rank` of a matrix
+
+## Gaussian Elimination
+
+- All the pivots are 1
+- Augment a matrix with right hand side constant
+
+## Determinant
+
+- `det(A)`
+- Only for square matrices
+- Single number that reflects the entire matrix.
+- If a matrix contains a set of linearly dependent columns, `det(A) = 0`.
+- `Determinant` is used to get matrix inverse
+  - `Matrix inverse` requires division by determinant
+  - So if determinant is 0, there's no inverse.
+
 ## Python
 
 - `np.linalg.norm(VECTOR)` returns vector length or called magnitude
