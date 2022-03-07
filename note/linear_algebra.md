@@ -465,6 +465,25 @@
 - `Determinant` is used to get matrix inverse
   - `Matrix inverse` requires division by determinant
   - So if determinant is 0, there's no inverse.
+- Proof of a matrix which has linearly dependent set that has determinant 0.
+
+```
+det(A) = 
+
+| a  lambda a |
+| c  lambda c |
+
+= a lambda c - lambda a c
+```
+
+- `det(I)`, determinant of identity matrix, is always 1 regardless of the size.
+- `Singular matrix (reduced-rank matrix)` has a determinant of 0.
+  - Even in a determinant of a matrix 3 by 3, if the matrix is a `rank-deficient matrix (reduced-rank matrxi)`, 
+    the determinant is 0.
+- Computer tends to fail to compute a determinant of 0 in the large size linearly dependent set matrix.
+- Exchanging 2 rows in 2 by 2 matrix and 3 by 3 matrix cause the sign flip of the determinant, thought it keeps the same
+  magnitude.
+  - In 3 by 3 matrix, when exchanging 2 rows twice, it keeps the same sign and magnitude of the determinant.
 
 ## Python
 
