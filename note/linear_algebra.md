@@ -512,8 +512,59 @@ Not allowed B^-1 A B = C B^-1
   - Product of individual matrices `ABC` might be invertible, but individual matrices `A`, `B`, or `C` might not be 
     invertible.
 - A matrix is `invertible (non-singular)` if it is `square` and `full-rank`.
+  - `Full-rank` if a matrix is `linearly independent`
+  - `Full-rank` if the determinant of a matrix is not 0.
 - Avoid calculating matrix inverse whenever possible especially when a matrix is large, because of computer rounding 
   error
+
+### 2x2 Matrix Inverse
+
+1. Swap diagonal elements
+2. Swap signs of off-diagonal elements
+3. Divide by determinant
+
+```
+[
+    [ d  -b ],
+    [ -c  a ]
+] * 1 / (ad - bc)
+```
+
+### MCA Algorithm
+
+- (Pre-compute the determinant of a matrix, and confirm that the determinant is not 0)
+  - (So it's invertible. If it's 0, it's not invertible, so don't waste your time by doing MCA algorithm)
+- `Minors matrix`
+  - Strike out the row and column of the element, and compute determinant of the sub-matrix, the matrix of the 
+    remaining elements.
+- `Cofactors matrix`
+  - Make the below `+/- checkerboard`, and assign +/- by `hadamard-multiplication` with `minors matrix`
+  - The checkerboard always starts with + at the upper-left corner
+    - Formally `h_{i, j} = (-1)^(i + j)`
+
+```
+[
+    [+ -],
+    [- +]
+]
+
+[
+    [+ - +],
+    [- + -],
+    [+ - +]
+]
+
+[
+    [+ - + -],
+    [- + - +],
+    [+ - + -],
+    [- + - +]
+]
+```
+
+- `Adjugate matrix`
+  - Transpose the `cofactors matrix`, and element-wise divide it by the determinant of `original matrix`
+  - `A^-1 = C^T * (1 / determinant)`
 
 ## Python
 
