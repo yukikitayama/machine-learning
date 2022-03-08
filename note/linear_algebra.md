@@ -484,6 +484,36 @@ det(A) =
 - Exchanging 2 rows in 2 by 2 matrix and 3 by 3 matrix cause the sign flip of the determinant, thought it keeps the same
   magnitude.
   - In 3 by 3 matrix, when exchanging 2 rows twice, it keeps the same sign and magnitude of the determinant.
+- Increasing `determinant` by shifting a linear dependent matrix (adding `identity matrix` multiplied by `lambda` 
+  scalar) is used in `regularization` in machine learning.
+  - As you shift the matrix more, the determinant magnitude tends to increase.
+- `det(AB) = det(A) * det(B)`
+
+## Inverse
+
+- Why a matrix inverse is necessary
+  - Remember `A^-1 A = I`
+```
+     A x = b
+A^-1 A x = A^-1 b
+     I x = A^-1 b
+       x = A^-1 b
+```
+- Matrix inverse is side-dependent
+```
+                 A B = C
+            A^-1 A B = A^-1 C (gives B = A^-1 C)
+            A B B^-1 = C B^-1 (gives A = C B^-1)
+Not allowed B^-1 A B = C B^-1 
+(left-side is left-multiply, but right-side is right-multiply)
+            B^-1 A B = B^-1 C
+```
+- `(ABC)^-1 = C^-1 B^-1 A^-1`
+  - Product of individual matrices `ABC` might be invertible, but individual matrices `A`, `B`, or `C` might not be 
+    invertible.
+- A matrix is `invertible (non-singular)` if it is `square` and `full-rank`.
+- Avoid calculating matrix inverse whenever possible especially when a matrix is large, because of computer rounding 
+  error
 
 ## Python
 
