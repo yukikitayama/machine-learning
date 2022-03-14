@@ -707,6 +707,21 @@ Q^T Q is the multiplication of orthogonal matrices, so it produces identity matr
 (mxm mxn = mxn)
 ```
 
+- Computing matrix inverse can be stable via QR decomposition
+
+```
+   A = Q R
+A^-1 = (Q R)^-1
+
+By LIVE EVIL rule,
+
+A^-1 = R^-1 Q^-1
+
+Because orthogonal matrix Q has the same inverse and transpose
+
+A^-1 = R^-1 Q^T
+```
+
 ## Python
 
 - `np.linalg.norm(VECTOR)` returns vector length or called magnitude
