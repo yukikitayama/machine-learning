@@ -722,6 +722,24 @@ Because orthogonal matrix Q has the same inverse and transpose
 A^-1 = R^-1 Q^T
 ```
 
+## Least-Squares
+
+- Why do we apply linear algebra to least-squares?
+  - Simplified form makes it applicable to many problems,
+  - It has closed form solution
+  - Computationally efficient
+- `Orthogonal projection`
+  - `X` gives us column space of `X`. 
+  - `X b` gives us the subspace in column space of `X`
+  - `X b` is the orthogonal projection of `y` onto `X`
+  - The orthogonal projection is `y hat`
+  - Distance between `y` and `y hat` is `epsilon`
+- Least-squares by `row-reduction`
+  - Set up equation of `X b = y`
+  - `X^T` Left-multiply to both sides, `X^T X b = X^T y`
+  - Do `row reduction` to augmented matrix of `X^T X | X^T y`
+  - Gives us `I | b`
+
 ## Python
 
 - `np.linalg.norm(VECTOR)` returns vector length or called magnitude
