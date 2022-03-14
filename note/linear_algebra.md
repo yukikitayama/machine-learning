@@ -453,6 +453,9 @@
 
 ## Gaussian Elimination
 
+- Solve system of equations by `Ax = b`
+- Compute `rref([A | b])`
+- It gives `[I | x]`
 - All the pivots are 1
 - Augment a matrix with right hand side constant
 
@@ -516,6 +519,8 @@ Not allowed B^-1 A B = C B^-1
   - `Full-rank` if the determinant of a matrix is not 0.
 - Avoid calculating matrix inverse whenever possible especially when a matrix is large, because of computer rounding 
   error
+- Inverse of `diagonal matrix`
+  - Diagonal elements are individually reciprocated.
 
 ### 2x2 Matrix Inverse
 
@@ -565,6 +570,142 @@ Not allowed B^-1 A B = C B^-1
 - `Adjugate matrix`
   - Transpose the `cofactors matrix`, and element-wise divide it by the determinant of `original matrix`
   - `A^-1 = C^T * (1 / determinant)`
+
+### Computing Inverse Via Row Reduction
+
+- `rref([A | I]) = [I | A^-1]`
+- At the left side of the equation, the identity matrix doesn't become identity matrix (for example, the last row 
+  becomes all 0s), it's a singular matrix, so there's no inverse matrix.
+
+### One-Sided Inverse
+
+- `Left inverse for tall matrix`
+  - `A` is `mxn, m > n` tall matrix, and rank is `n`
+  - `A` is rectangular, so it cannot have inverse
+  - `A^T A` is `nxm` times `mxn`, so `nxn`
+  - `A^T A` is square, so it can have inverse
+  - `(A^T A)^-1 (A^T A) = I`. 
+  - First parenthesis cannot be removed, but second can
+  - `(A^T A)^-1 A^T A = I`
+  - `(A^T A)^-1 A^T` is `left inverse` of `A`.
+  - `A^T A` is `full-rank` if `A` is `full column-rank`
+  - `A` has a left inverse if it is `full column-rank`
+  - `A` is `mxn, m > n`, and `r=n` rank is `n`
+- `Right inverse for wide matrix`
+  - `A` is `mxn, m < n` wide matrix, and rank is `m`
+  - `A A^T` is `mxn` times `nxm`, so `mxm`
+  - `(A A^T) (A A^T)^-1 = I`
+  - `A A^T (A A^T)^-1 = I`
+  - `A^T (A A^T)^-1` is `right inverse` of `A`
+  - If `A` is `mxn, m < n` wide matrix, `A` has `right inverse` if it is `full row-rank` (rank of `A` is `m`)
+
+### Pseudoinverse
+
+- `A^*, A^+`
+- When a matrix is `rank-deficient`, there is no inverse, but pseudo-inverse tries to approach identity matrix if it 
+  multiplies the original matrix.
+- If you compute `pseudo-inverse` from a `full-rank` matrix, it gives `inverse`.
+- `A A^*` and `A^* A` are not always the same, but both tries to compute something similar to identity matrix.
+- `A A^-1 == A^-1 A == I`
+- `A A* != A* A != I`
+- You can compress a rank-deficient matrix down to a size where it has a true inverse (e.g. via `PCA`), then project
+  back to the full space.
+- `Inverse` is unique, but `pseudo-inverse` is not unique, because there are multiple ways to compute it.
+  - `Moore-Penrose pseudoinverse` is unique.
+
+## Projection
+
+- When two vectors are orthogonal to each other, dot product is 0.
+- Project of `b` onto `a`
+  - `proj_a b = beta a`
+    - `beta a` is as close as to `b` without leaving line `a`.
+  - `beta = (a^T b) / (a^T a)`
+    - mapping between two vectors `a` and `b`, scaled by squared length of `a`
+    - `mapping` divided by `magnitude`
+    - Used in correlation, convolution, normalization, etc.
+- Projection in R^N
+  - `A^T A` must be invertible
+  - So `A^T A` must be `square` and `full-rank`
+  - So `A` must be `square full-rank matrix` or `tall rectangular full-column-rank matrix`
+
+```
+        A^T(b - Ax) = 0
+    A^T b - A^T A x = 0
+            A^T A x = A^T b
+
+A^T A is matrix, so cannot divide by A^T A both sides, like a^T a
+Instead, left-multiply both sides by (A^T A)^-1
+
+(A^T A)^-1 (A^T A)x = (A^T A)^-1 A^T b
+                  x = (A^T A)^-1 A^T b
+
+If A is square full-rank, it becomes further by using LIVE EVIL rule
+
+                  x = A^-1 A^-T A^T b
+                  x = A^-1 b
+```
+
+- `(A^T A)^-1 = A^-1 A^-T` by `LIVE EVIL rule`
+
+## Orthogonal Matrix
+
+- Typically indicated with the letter `Q`
+- All columns are pairwise orthogonal
+- Each column has magnitude = 1
+- Individually see columns in a matrix
+  - `<Q_i, Q_j>` is `1 if i == j`, and `0 if i != j`
+- See matrix as a whole (suppose it's `square matrix`)
+  - `Q^T Q = I`
+  - `Q^T Q = Q^-1 Q = I` because, if you can get identity matrix, `Q^T` is identical to `Q^-1`.
+  - `Q^T Q = Q^-1 Q = Q Q^T = Q Q^-1 = I`
+- Rectangular Q matrix
+  - First confirm all the `columns` are `pairwise orthogonal`
+  - `Q^T Q = I`, but `Q Q^T` won't.
+
+## Gram-Schmidt Procedure (Process)
+
+- Create orthogonal matrix from a given matrix
+- After applying gram-schmidt procedure, it's no longer the same thing as the original matrix. After Gram-schmidt
+  procedure, we lost information, no way to get back to original matrix
+- It motivates to use `QR decomposition`, which decompose a matrix into orthogonal matrix `Q` and another matrix `R`, 
+  so that `Q R = original matrix` to allow us to go back to the original matrix, after getting orthogonal matrix.
+- Gram-Schmidt procedure is great in theory, but it will be unstable with real data and computing by computer, because
+  Gram-schmidt procedure use many divisions, and when a vector get small, division will brow up, and cannot compute
+  - So computer algorithm typically does not implement Gram-schmidt procedure, and use other implementation.
+
+### Procedure
+
+- Given a matrix, think of it as a set of columns
+- Take a column one by one, and orthogonalize it relative to previous vectors
+  - Orthogonalization can be done by `vector minus vector parallel to reference vector (Vector to parallel and 
+    orthogonal decomposition)`.
+- Continue as long as vector exists.
+
+## QR Decomposition
+
+- `A = Q R`
+  - `mxn = mxm mxn`
+  - `Q` is `orthogonal matrix`
+  - In gram-schmidt procedure, `Q` has loss of information from `A`, but the lost information goes to `R`.
+  - You can think of `R` as `residual matrix` as leftover.
+  - `R` is always an `upper-triangular matrix`, because lower triangle comes from later rows and earlier columns, and
+    later columns in `Q` are orthogonal to earlier columns of `A`. It's 0 because row and column indices are different.
+- How to compute `R`
+```
+     A = Q R
+Q^-1 A = Q^-1 Q R
+
+But Q^-1 is equal to Q^T, which is easier to get
+
+ Q^T A = Q^T Q R
+
+Q^T Q is the multiplication of orthogonal matrices, so it produces identity matrix
+
+ Q^T A = I R
+ Q^T A = R
+
+(mxm mxn = mxn)
+```
 
 ## Python
 
