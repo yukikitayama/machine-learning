@@ -40,4 +40,4 @@ lambda v = A v
 
 - When `A v = lambda v` is true, `lambda` is `eigenvalue`, and `v` is the associated `eigenvector`
 
-from 134 in udemy
+from 145 in udemy
