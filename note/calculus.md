@@ -177,7 +177,11 @@
 
 ## Newton-Raphson Method
 
-- xxx
+- `x_i+1 = x_i - f(x_i) / f'(x_i)` by iteration
+- When gradient `f'(x_i)` is small, it doesn't converge, because the division gets large, and `x_i+1` will be very
+  different from `x_i`
+- It happens in areas where the curve is not well described by a straight line.
+- `scipy.optimize.newton(FUNCTION, INITIAL_GUESS)` goes `Newton-Raphson method`.
 
 ## Gradient Descent
 
