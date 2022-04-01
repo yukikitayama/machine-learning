@@ -77,7 +77,8 @@ A collection of Markdown files where I took note to understand the concept of ma
 - [ ] Read SMOTE paper
 - [ ] Coursera Mathematics for Machine Learning: Linear Algebra
   - Didn't understand week 5 calculating eigenvectors
-- [ ] ESL 3.1 and 3.2
+- [x] ESL 3.1 and 3.2
+- [ ] ESL 4.3 Linear Discriminant Analysis
 - [ ] Read ESL from 5.5 Automatic Selection of the Smoothing Parameters
 - [ ] Read ESL from 10.10.3 Implementation of Gradient Boosting
 - [ ] Check SMOTE
