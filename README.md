@@ -45,6 +45,10 @@ A collection of Markdown files where I took note to understand the concept of ma
   - Understand neural network
 - [Mathematics for Machine Learning Specialization](https://www.coursera.org/specializations/mathematics-machine-learning)
   - Understand linear algebra
+- [Machine Learning](https://www.coursera.org/learn/machine-learning)
+  - Support vector machine
+  - Logistic regression
+  - By Andrew Ng
 
 ## Udemy
 
