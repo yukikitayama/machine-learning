@@ -47,12 +47,15 @@ A collection of Markdown files where I took note to understand the concept of ma
   - Understand linear algebra
 - [Machine Learning](https://www.coursera.org/learn/machine-learning)
   - Support vector machine
-  - Logistic regression
   - By Andrew Ng
 
 ## Udemy
 
 - [Complete linear algebra: theory and implementation in code](https://www.udemy.com/course/linear-algebra-theory-and-implementation/)
+  - Principal component analysis
+  - Least-squares
+  - Eigendecomposition
+  - Singular value decomposition
 
 ## Data
 
