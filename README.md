@@ -79,7 +79,7 @@ A collection of Markdown files where I took note to understand the concept of ma
 - [ ] Kaggle credit card fraud detection
 - [x] Read ISL 10.3.1 K-Means Clustering
 - [x] Read ISL 10.3.2 Hierarchical Clustering
-- [ ] Read ISL from 9.2 Support Vector Machines
+- [x] Read ISL from 9.2 Support Vector Machines
 - [x] Read XGBoost paper
 - [ ] Read SMOTE paper
 - [ ] Coursera Mathematics for Machine Learning: Linear Algebra
@@ -88,6 +88,6 @@ A collection of Markdown files where I took note to understand the concept of ma
 - [ ] ESL 4.3 Linear Discriminant Analysis
 - [ ] Read ESL from 5.5 Automatic Selection of the Smoothing Parameters
 - [ ] Read ESL from 10.10.3 Implementation of Gradient Boosting
-- [ ] Check SMOTE
+- [ ] Read ESL from 11.5.2 Overfitting
 - [ ] Check AB testing
   - https://www.kaggle.com/tammyrotem/ab-tests-with-python
