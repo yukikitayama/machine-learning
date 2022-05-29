@@ -27,18 +27,6 @@ A collection of Markdown files where I took note to understand the concept of ma
   - [Introduction to Linear Algebra, Fifth Edition (2016)](https://math.mit.edu/~gs/linearalgebra/)
   - Graduate students textbook
   
-## Video
-
-- [StatQuest](https://www.youtube.com/channel/UCtYLUTtgS3k1Fg4y5tAhLbw)
-- [3Blue1Brown](https://www.youtube.com/3blue1brown)
-  - Series of videos developing mathematical intuition
-
-## Website
-
-- [Machine Learning Mastery](https://machinelearningmastery.com/blog/)
-- [3Blue1Brown](https://www.3blue1brown.com/)
-  - Series of videos developing mathematical intuition
-
 ## Coursera
 
 - [Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning)
@@ -56,6 +44,20 @@ A collection of Markdown files where I took note to understand the concept of ma
   - Least-squares
   - Eigendecomposition
   - Singular value decomposition
+- [Master statistics & machine learning: intuition, math, code](https://www.udemy.com/course/statsml_x/)
+  - Traditional statistics basics
+
+## Website
+
+- [Machine Learning Mastery](https://machinelearningmastery.com/blog/)
+- [3Blue1Brown](https://www.3blue1brown.com/)
+  - Series of videos developing mathematical intuition
+
+## Video
+
+- [StatQuest](https://www.youtube.com/channel/UCtYLUTtgS3k1Fg4y5tAhLbw)
+- [3Blue1Brown](https://www.youtube.com/3blue1brown)
+  - Series of videos developing mathematical intuition
 
 ## Data
 
