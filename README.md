@@ -26,6 +26,8 @@ A collection of Markdown files where I took note to understand the concept of ma
 - Introduction to Linear Algebra, Gilbert Strang, Wellesley-Cambridge Press
   - [Introduction to Linear Algebra, Fifth Edition (2016)](https://math.mit.edu/~gs/linearalgebra/)
   - Graduate students textbook
+- Practical Statistics for Data Scientists, O'REILLY, Peter Bruce
+  - A/B testing
   
 ## Coursera
 
