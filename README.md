@@ -17,18 +17,25 @@ A collection of Markdown files where I took note to understand the concept of ma
 
 ## Book
 
-- An Introduction to Statistical Learning, Springer, Gareth James/Daniela Witten/Trevor Hastie/Robert Tibshirani
+- An Introduction to Statistical Learning
+  - Springer, Gareth James/Daniela Witten/Trevor Hastie/Robert Tibshirani
   - "ISL". I used in Columbia University machine learning classes.
-- The Elements of Statistical Learning, Springer, Trevor Hastie/Robert Tibshirani/Jerome Friedman
+- The Elements of Statistical Learning
+  - Springer, Trevor Hastie/Robert Tibshirani/Jerome Friedman
   - "ESL". I used in Columbia University machine learning classes.
-- Mathematical Methods in the Physical Sciences, Mary L Boas
-  - Linear algebra and calculus
-- Introduction to Linear Algebra, Gilbert Strang, Wellesley-Cambridge Press
-  - [Introduction to Linear Algebra, Fifth Edition (2016)](https://math.mit.edu/~gs/linearalgebra/)
-  - Graduate students textbook
-- Practical Statistics for Data Scientists, O'REILLY, Peter Bruce
+- Practical Statistics for Data Scientists
+  - O'REILLY, Peter Bruce
   - A/B testing
-  
+- Machine Learning Design Patterns
+  - O'REILLY, Valliappa Lakshmanan
+- Mathematical Methods in the Physical Sciences
+  - Mary L Boas
+  - Linear algebra and calculus
+- Introduction to Linear Algebra
+  - Gilbert Strang, Wellesley-Cambridge Press
+  - [Introduction to Linear Alg ebra, Fifth Edition (2016)](https://math.mit.edu/~gs/linearalgebra/)
+  - Graduate students textbook
+
 ## Coursera
 
 - [Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning)
