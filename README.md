@@ -74,6 +74,8 @@ A collection of Markdown files where I took note to understand the concept of ma
 - Imbalance class data
   - [Credit card fraud detection](https://www.kaggle.com/mlg-ulb/creditcardfraud)
 - [Elements of statistical learning data](https://hastie.su.domains/ElemStatLearn/)
+- web_page_data.csv
+  - Web page session time data from O'REILLY Practical Statistics for Data Scientists
 
 ## Paper
 
