@@ -35,6 +35,8 @@ A collection of Markdown files where I took note to understand the concept of ma
   - Gilbert Strang, Wellesley-Cambridge Press
   - [Introduction to Linear Alg ebra, Fifth Edition (2016)](https://math.mit.edu/~gs/linearalgebra/)
   - Graduate students textbook
+- Machine Learning Interviews, Kickstart your machine learning and data career
+  - O'REILLY, Susan Shu Chang
 
 ## Coursera
 
@@ -45,6 +47,8 @@ A collection of Markdown files where I took note to understand the concept of ma
 - [Machine Learning](https://www.coursera.org/learn/machine-learning)
   - Support vector machine
   - By Andrew Ng
+- [Machine Learning Specialization](https://www.coursera.org/specializations/machine-learning-introduction)
+  - Machine learning basics
 
 ## Udemy
 

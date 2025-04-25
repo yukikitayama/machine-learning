@@ -8,3 +8,4 @@ data/fracta_train.csv
 data/fracta_test.csv
 book/
 env/
+.venv/
