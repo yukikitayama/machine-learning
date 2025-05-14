@@ -28,6 +28,10 @@ A collection of Markdown files where I took note to understand the concept of ma
   - A/B testing
 - Machine Learning Design Patterns
   - O'REILLY, Valliappa Lakshmanan
+- Machine Learning Interviews, Kickstart your machine learning and data career
+  - O'REILLY, Susan Shu Chang
+- Ace the Data Science Interview
+  - Kevin Huo, Nick Singh
 - Mathematical Methods in the Physical Sciences
   - Mary L Boas
   - Linear algebra and calculus
@@ -35,8 +39,6 @@ A collection of Markdown files where I took note to understand the concept of ma
   - Gilbert Strang, Wellesley-Cambridge Press
   - [Introduction to Linear Alg ebra, Fifth Edition (2016)](https://math.mit.edu/~gs/linearalgebra/)
   - Graduate students textbook
-- Machine Learning Interviews, Kickstart your machine learning and data career
-  - O'REILLY, Susan Shu Chang
 
 ## Coursera
 
@@ -59,6 +61,8 @@ A collection of Markdown files where I took note to understand the concept of ma
   - Singular value decomposition
 - [Master statistics & machine learning: intuition, math, code](https://www.udemy.com/course/statsml_x/)
   - Traditional statistics basics
+- [Data Analysis with Pandas and Python](https://www.udemy.com/course/data-analysis-with-pandas/)
+- [Interactive Python Dashboards with Plotly and Dash](https://www.udemy.com/course/interactive-python-dashboards-with-plotly-and-dash/)
 
 ## Website
 
