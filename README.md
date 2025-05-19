@@ -112,3 +112,7 @@ A collection of Markdown files where I took note to understand the concept of ma
 - [ ] Read ESL from 11.5.2 Overfitting
 - [ ] Check AB testing
   - https://www.kaggle.com/tammyrotem/ab-tests-with-python
+
+## Jupyter
+
+- `Shift + Tab` shows documentation. Useful when checking parameter of package classes, functions.
