@@ -11,3 +11,4 @@ Series
   - `dict(series)` returns a dictionary with Series index as key and Series value as value.
   - `max(series)` can work
   - `in series` by default searches in Series "index".
+- `.iloc[]` is not method, but attribute.
