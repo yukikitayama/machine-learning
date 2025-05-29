@@ -12,3 +12,4 @@ Series
   - `max(series)` can work
   - `in series` by default searches in Series "index".
 - `.iloc[]` is not method, but attribute.
+- Search with fallback value
