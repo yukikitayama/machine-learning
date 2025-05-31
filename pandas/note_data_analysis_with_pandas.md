@@ -13,3 +13,9 @@ Series
   - `in series` by default searches in Series "index".
 - `.iloc[]` is not method, but attribute.
 - Search with fallback value
+- **Copy** is a duplicate/replica of an object
+  - Changes to a copy do not modify the original object
+  - `copy` method creates a copy of a pandas object
+- **View** is a different way of looking at the same data
+  - Changes toa view do modify the original object
+- `squeeze()` method gives a view
