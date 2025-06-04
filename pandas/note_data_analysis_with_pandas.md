@@ -19,3 +19,6 @@ Series
 - **View** is a different way of looking at the same data
   - Changes toa view do modify the original object
 - `squeeze()` method gives a view
+- `map` method connects (or maps) each Series values to another value.
+  - Pass a dictionary or a Series to connect key to value
+  - By default, Series value acts as key
