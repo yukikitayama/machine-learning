@@ -22,3 +22,9 @@ Series
 - `map` method connects (or maps) each Series values to another value.
   - Pass a dictionary or a Series to connect key to value
   - By default, Series value acts as key
+
+DataFrame
+- Pandas converts a column to float type if an integer column has at least missing value
+  - If you wanna convert to integer type, you need to delete or replace the missing value before doing it
+- `df.axes` returns `list` of row index series and column index series
+- `df.info()`, non-null count means the number of data which are not missing value
