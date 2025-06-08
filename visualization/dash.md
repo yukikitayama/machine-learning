@@ -14,6 +14,15 @@
     - Higher-level interactive components that are generated with JavaScript, HTML, CSS through React.js library
     - Describes the individual graphs themselves
 - Dash creates a Flask application by `dash.Dash()`
+- Technically, no knowledge of HTML or CSS is needed to create a Dash Dashboard, but to stylize and customize Dash Dashboards, knowledge of HTML and CSS will help out a lot!
+
+## HTML components
+
+- Create an HTML Div
+- Multiple items inside the Div?
+  - Create a list to hold the components
+- Outside of that list can be a style dictionary
+  - `style={'property': 'value'}`
 
 ## Troubleshoot
 

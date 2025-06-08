@@ -31,3 +31,10 @@ DataFrame
 - `df.sum(axis="index")` is equal to `df.sum(axis=0)`. `df.sum(axis="columns")` is equal to `df.sum(axis="columns")`
 - `df.sum().sum()` can sum all the value in rows and columns
 - Pandas extracts a column from a DataFrame as a Series. The Series is a view, so changes to the Series will affect the DataFrame.
+- `df[["col1", "col2"]]` creates *copy* of a dataframe, not view.
+
+
+
+
+
+
