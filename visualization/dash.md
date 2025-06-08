@@ -9,8 +9,10 @@
 - Dash offers two distinct component libraries
   - `dash_html_components`
     - Library which has component for Every HTML tag
+    - Describes the layout of the page
   - `dash_core_components`
     - Higher-level interactive components that are generated with JavaScript, HTML, CSS through React.js library
+    - Describes the individual graphs themselves
 - Dash creates a Flask application by `dash.Dash()`
 
 ## Troubleshoot

@@ -28,3 +28,6 @@ DataFrame
   - If you wanna convert to integer type, you need to delete or replace the missing value before doing it
 - `df.axes` returns `list` of row index series and column index series
 - `df.info()`, non-null count means the number of data which are not missing value
+- `df.sum(axis="index")` is equal to `df.sum(axis=0)`. `df.sum(axis="columns")` is equal to `df.sum(axis="columns")`
+- `df.sum().sum()` can sum all the value in rows and columns
+- Pandas extracts a column from a DataFrame as a Series. The Series is a view, so changes to the Series will affect the DataFrame.
