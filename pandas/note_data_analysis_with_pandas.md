@@ -23,7 +23,7 @@ Series
   - Pass a dictionary or a Series to connect key to value
   - By default, Series value acts as key
 
-DataFrame
+DataFrame I
 - Pandas converts a column to float type if an integer column has at least missing value
   - If you wanna convert to integer type, you need to delete or replace the missing value before doing it
 - `df.axes` returns `list` of row index series and column index series
@@ -32,7 +32,9 @@ DataFrame
 - `df.sum().sum()` can sum all the value in rows and columns
 - Pandas extracts a column from a DataFrame as a Series. The Series is a view, so changes to the Series will affect the DataFrame.
 - `df[["col1", "col2"]]` creates *copy* of a dataframe, not view.
-
+- `df.dropna()` removes any rows that have any missing values.
+  - `dropna(how="all")` doesn't remove row that only all columns are missing
+  - `dropna(subset=[])` limit search of columns. *OR* relationship.
 
 
 

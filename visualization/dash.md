@@ -24,6 +24,11 @@
 - Outside of that list can be a style dictionary
   - `style={'property': 'value'}`
 
+## Markdown text
+
+- Markdown text allows for links, italics, bold text, bullet lists, etc.
+
 ## Troubleshoot
 
 - https://stackoverflow.com/questions/69375384/python-dash-core-components-modulenotfound
+- `help(html.Div)`
