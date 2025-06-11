@@ -24,6 +24,16 @@
 - Outside of that list can be a style dictionary
   - `style={'property': 'value'}`
 
+## Dash callback
+
+- Callback is for interaction
+- Steps
+  - Create a function to return some desired output
+  - Decorate that function with an `@app.callback` decorator
+    - Set an `Output` to a component id
+    - Set an `Input` to a component id
+  - Connect the desired properties
+
 ## Markdown text
 
 - Markdown text allows for links, italics, bold text, bullet lists, etc.

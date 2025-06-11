@@ -35,7 +35,7 @@ DataFrame I
 - `df.dropna()` removes any rows that have any missing values.
   - `dropna(how="all")` doesn't remove row that only all columns are missing
   - `dropna(subset=[])` limit search of columns. *OR* relationship.
-
+- `df["col1"]` is a view, but `df["col1"].fillna(0)` returns a copy
 
 
 
