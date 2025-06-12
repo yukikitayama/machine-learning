@@ -36,7 +36,11 @@ DataFrame I
   - `dropna(how="all")` doesn't remove row that only all columns are missing
   - `dropna(subset=[])` limit search of columns. *OR* relationship.
 - `df["col1"]` is a view, but `df["col1"].fillna(0)` returns a copy
-
+- `astype("category")` type is ideal for columns with a limited number of unique values
+  - Reduces memory consumption of dataframe.
+  - Pandas doesn't create a separate value in memory for each cell. The cells point to a single copy for each unique value.
+  - `df.info()` returns memory usage.
+- `df.nunique()` returns a Series with the number of unique values in each column.
 
 
 
