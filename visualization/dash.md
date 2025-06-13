@@ -16,6 +16,10 @@
 - Dash creates a Flask application by `dash.Dash()`
 - Technically, no knowledge of HTML or CSS is needed to create a Dash Dashboard, but to stylize and customize Dash Dashboards, knowledge of HTML and CSS will help out a lot!
 
+## Coding tips
+
+- Put each dropdown menu in a separate html.Div, so that it's easy to maintain styling.
+
 ## HTML components
 
 - Create an HTML Div

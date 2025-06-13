@@ -41,6 +41,6 @@ DataFrame I
   - Pandas doesn't create a separate value in memory for each cell. The cells point to a single copy for each unique value.
   - `df.info()` returns memory usage.
 - `df.nunique()` returns a Series with the number of unique values in each column.
-
+- `df.sort_values("col1", na_position="first")` can place NaNs at the beginning.
 
 
