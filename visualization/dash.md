@@ -20,6 +20,16 @@
 
 - Put each dropdown menu in a separate html.Div, so that it's easy to maintain styling.
 
+## Image
+
+```python
+import base64
+
+def encode_image(image_file):
+    encoded = base64.b64encode(open(image_file, "rb").read())
+    return f"data:image/png;base64,{encoded.decode()}"
+```
+
 ## HTML components
 
 - Create an HTML Div
