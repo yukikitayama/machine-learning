@@ -42,5 +42,6 @@ DataFrame I
   - `df.info()` returns memory usage.
 - `df.nunique()` returns a Series with the number of unique values in each column.
 - `df.sort_values("col1", na_position="first")` can place NaNs at the beginning.
+- `df["col1"].rank(ascending=False)` returns a copy of Series of raking in descending order.
 
 
