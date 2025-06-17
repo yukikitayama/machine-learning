@@ -48,6 +48,12 @@ def encode_image(image_file):
     - Set an `Input` to a component id
   - Connect the desired properties
 
+## State
+
+- `dash.dependencies.State` offers the ability to store saved changes, and send them back on command
+- Think of this as hitting a submit button on a form.
+- By adding `State()` to `@app.callback`, the state is connected to a component id and a property.
+
 ## Markdown text
 
 - Markdown text allows for links, italics, bold text, bullet lists, etc.

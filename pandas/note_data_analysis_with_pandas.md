@@ -44,4 +44,18 @@ DataFrame I
 - `df.sort_values("col1", na_position="first")` can place NaNs at the beginning.
 - `df["col1"].rank(ascending=False)` returns a copy of Series of raking in descending order.
 
+DataFrame II
+- datetime format `%p` is AM or PM.
+- `pd.read_csv("employees.csv", parse_dates=["Start Date"], date_format="%m/%d/%Y")`
+- 
+
+
+
+
+
+
+
+
+
+
 
