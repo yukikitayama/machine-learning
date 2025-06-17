@@ -47,7 +47,8 @@ DataFrame I
 DataFrame II
 - datetime format `%p` is AM or PM.
 - `pd.read_csv("employees.csv", parse_dates=["Start Date"], date_format="%m/%d/%Y")`
-- 
+- `df[df["col1"] == "value"]` returns a new dataframe.
+- `df["datetime_col"].dt.time` returns a Series of `datetime.time`.
 
 
 
