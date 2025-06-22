@@ -50,7 +50,8 @@ DataFrame II
 - `df[df["col1"] == "value"]` returns a new dataframe.
 - `df["datetime_col"].dt.time` returns a Series of `datetime.time`.
 - Filter with multiple conditions is better to assign each filter boolean series to a variable to easier to read code.
-
+- `isnull()` returns True for NaN, while `notnull()` return True for present values, so they are invert to another.
+- `Series.between(left, right)` returns True if a series value is found within its range.
 
 
 
