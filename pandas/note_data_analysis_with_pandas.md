@@ -53,7 +53,7 @@ DataFrame II
 - `isnull()` returns True for NaN, while `notnull()` return True for present values, so they are invert to another.
 - `Series.between(left, right)` returns True if a series value is found within its range.
 - `df["col"].duplicated(keep=False)` marks all the occurrence as duplicated if they appear multiple times, unline `keep="first"` or `keep="last"`.
-- 
+- `drop_duplicates()` by default checks all the columns. `(keep=False)` removes all the duplicated occurrences.
 
 
 
