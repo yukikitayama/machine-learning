@@ -23,7 +23,7 @@ Series
   - Pass a dictionary or a Series to connect key to value
   - By default, Series value acts as key
 
-DataFrame I
+DataFrame I: introduction
 - Pandas converts a column to float type if an integer column has at least missing value
   - If you wanna convert to integer type, you need to delete or replace the missing value before doing it
 - `df.axes` returns `list` of row index series and column index series
@@ -44,7 +44,7 @@ DataFrame I
 - `df.sort_values("col1", na_position="first")` can place NaNs at the beginning.
 - `df["col1"].rank(ascending=False)` returns a copy of Series of raking in descending order.
 
-DataFrame II
+DataFrame II: filtering data
 - datetime format `%p` is AM or PM.
 - `pd.read_csv("employees.csv", parse_dates=["Start Date"], date_format="%m/%d/%Y")`
 - `df[df["col1"] == "value"]` returns a new dataframe.
@@ -54,8 +54,10 @@ DataFrame II
 - `Series.between(left, right)` returns True if a series value is found within its range.
 - `df["col"].duplicated(keep=False)` marks all the occurrence as duplicated if they appear multiple times, unline `keep="first"` or `keep="last"`.
 - `drop_duplicates()` by default checks all the columns. `(keep=False)` removes all the duplicated occurrences.
+- `df["col"].unique()` returns a different type of data, depending on the column type.
 
-
+DataFrame III: data extraction
+- `df.iloc[start_index:end_index]` end_index ins exclusive, but with `loc`, `df.loc[start_index:end_index]` end_index ins inclusive.
 
 
 
