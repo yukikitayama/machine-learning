@@ -9,3 +9,4 @@ data/fracta_test.csv
 book/
 env/
 .venv/
+.env
