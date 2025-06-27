@@ -60,6 +60,7 @@ DataFrame III: data extraction
 - `df.iloc[start_index:end_index]` end_index ins exclusive, but with `loc`, `df.loc[start_index:end_index]` end_index ins inclusive.
 - Generally it will be efficient if a dataframe is sorted by index.
 - `df.loc["index", "col"]` returns a single value, not series or dataframe.
+- When overwriting value in a dataframe, use `.loc` or `.iloc` at the top level.
 
 
 
