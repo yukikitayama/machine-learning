@@ -61,7 +61,10 @@ DataFrame III: data extraction
 - Generally it will be efficient if a dataframe is sorted by index.
 - `df.loc["index", "col"]` returns a single value, not series or dataframe.
 - When overwriting value in a dataframe, use `.loc` or `.iloc` at the top level.
-
+- Delete data in dataframe
+  - `df.drop(columns=[], index=[])`
+  - `df.pop("col")`
+  - `del df["col"]`
 
 
 
