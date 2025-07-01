@@ -65,8 +65,29 @@ DataFrame III: data extraction
   - `df.drop(columns=[], index=[])`
   - `df.pop("col")`
   - `del df["col"]`
+- `nlargest()` and `nsmallest()` method is available for dataframe and series.
+- `df.where(boolean_series)`, `where` method filters data with a boolean series, but pandas will populate rows that do not match the criteria with `NaN` values.
+- `apply` pass the uninvoked function as the first argument, pass `axis` parameter `"columns"` to invokr the function on every row.
+  - Function can receive the row's values as a *Series* object. Use `loc` and `iloc` to extract the column's values for that row.
+```
+def rank_movie(row):
+    year = row.loc["Year"]
+    actor = row.loc["Actor"]
+    budget = row.loc["Budget"]
+    
+    if year >= 1980 and year < 1990:
+        return "Great 80's flick"
 
+    if actor == "Pierce Brosnan":
+        return "The best Bond ever"
 
+    if budget > 100:
+        return "Expensive movie, fun"
+
+    return "No comment"
+
+bond.apply(rank_movie, axis=1)
+```
 
 
 

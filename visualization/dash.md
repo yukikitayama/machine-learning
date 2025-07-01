@@ -62,3 +62,13 @@ def encode_image(image_file):
 
 - https://stackoverflow.com/questions/69375384/python-dash-core-components-modulenotfound
 - `help(html.Div)`
+
+## Deployment
+
+- The process for deploying a Dashboard with Dash is essentially the same as a Flask App.
+- https://flask.palletsprojects.com/en/stable/deploying/
+- https://aws.amazon.com/tutorials/serve-a-flask-app/
+- https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-flask.html
+- https://aws.amazon.com/blogs/aws/lightsail-containers-an-easy-way-to-run-your-containers-in-the-cloud/
+- gunicorn (g unicorn)
+- `server = app.server` for `web: gunicorn <python-file-name>:server` for `Procfile`.
