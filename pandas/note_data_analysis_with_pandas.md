@@ -89,6 +89,10 @@ def rank_movie(row):
 bond.apply(rank_movie, axis=1)
 ```
 
+Working with text data
+- A **Series** has a special `str` attribute that exposes an object with string methods.
+  - Access `str` attribute, then invoke the string method on the nested object
+
 
 
 
