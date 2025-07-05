@@ -92,8 +92,15 @@ bond.apply(rank_movie, axis=1)
 Working with text data
 - A **Series** has a special `str` attribute that exposes an object with string methods.
   - Access `str` attribute, then invoke the string method on the nested object
+- To filer string data, `str.contains()`, `str.startswith()`, `str.endswith()`.
+- `df.index` and `df.columns` also support `str` attributes.
+- `str.get` method to access a nested list element by its index position.
+  - `df["col"].str.split(" ").str.get(0).value_counts()` returns data for the most common first word in the column
+  - `chicago["Name"].str.title().str.split(", ").str.get(1).str.strip().str.split(" ").str.get(0).value_counts()`
+- Using `n` number of splits with `expand` in `str.split` is useful for split the first `n` delimeter, and the rest of them are not split.
 
-
+MultiIndex
+- 
 
 
 
