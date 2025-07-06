@@ -100,7 +100,13 @@ Working with text data
 - Using `n` number of splits with `expand` in `str.split` is useful for split the first `n` delimeter, and the rest of them are not split.
 
 MultiIndex
-- 
-
+- `df.set_index(keys=["col1", "col2"])`
+- `pd.read_csv("data.csv", index_col=["Date", "Country"]).sort_index()`
+- Outermost level should be the one with the smallest number of unique values.
+  - `df.nunique()` can tell you
+  - It accelerate the speed that pandas narrows down dataset.
+- `df.index` return `MultiIndex` object
+  - `df.index.names` returns names
+  - `df.index[0]` also works, returns a tuple
 
 
