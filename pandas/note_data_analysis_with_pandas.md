@@ -108,5 +108,20 @@ MultiIndex
 - `df.index` return `MultiIndex` object
   - `df.index.names` returns names
   - `df.index[0]` also works, returns a tuple
+- `df.index.get_level_values("index_name")` or `df.index.get_level_values(0)` returns series of values of the index
+- Outermost level of MultiIndex is 0.
+- `df.index.set_names(names="index_name", level=position_integer)` returns copy of MultiIndex object}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
