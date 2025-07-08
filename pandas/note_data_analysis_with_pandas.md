@@ -111,7 +111,7 @@ MultiIndex
 - `df.index.get_level_values("index_name")` or `df.index.get_level_values(0)` returns series of values of the index
 - Outermost level of MultiIndex is 0.
 - `df.index.set_names(names="index_name", level=position_integer)` returns copy of MultiIndex object}
-
+- `df.loc[("name1", "name2")]`, using tuple is the best practice.
 
 
 
