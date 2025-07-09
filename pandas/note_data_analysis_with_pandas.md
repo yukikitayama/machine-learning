@@ -112,7 +112,8 @@ MultiIndex
 - Outermost level of MultiIndex is 0.
 - `df.index.set_names(names="index_name", level=position_integer)` returns copy of MultiIndex object}
 - `df.loc[("name1", "name2")]`, using tuple is the best practice.
-
+- Slice can also worl, `bigmac.loc[("2000-04-01", "Hungary"): ("2000-04-01", "Poland")]`
+- If `transpose()` multiindex dataframe, you get multiindex for column
 
 
 
