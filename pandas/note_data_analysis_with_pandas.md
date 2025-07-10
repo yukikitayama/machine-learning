@@ -114,8 +114,12 @@ MultiIndex
 - `df.loc[("name1", "name2")]`, using tuple is the best practice.
 - Slice can also worl, `bigmac.loc[("2000-04-01", "Hungary"): ("2000-04-01", "Poland")]`
 - If `transpose()` multiindex dataframe, you get multiindex for column
-
-
+- `stack` method moves the column index to the row index, returning a MultiIndex Series.
+- `untack` method moves a row index to the column index, potential to create multiindex to column.
+  - `level`, outermost index has level 0,
+  - Negative level work inside out, starts with -1
+- Any Series has `to_frame()` method
+- `sort_index(axis=1)` can sort columns
 
 
 
