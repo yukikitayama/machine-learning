@@ -120,8 +120,15 @@ MultiIndex
   - Negative level work inside out, starts with -1
 - Any Series has `to_frame()` method
 - `sort_index(axis=1)` can sort columns
-
-
+- `pivot(index=, columns=, values=)` reshapes data from a tall format to a wide format.
+  - `index` sets the horizontal index
+  - `columns` sets the column whose values will be the columns in the pivoted DataFrame
+  - `values` sets the values of the pivoted DataFrame
+- `melt` method is inverse of the `pivot`
+  - Takes a wide dataset and converts it to a tall dataset 
+  - `id_vars` column whose values will be repeated
+  - `var_name` name of the new column for the varying values
+  - `value_name` new name of the values column
 
 
 
