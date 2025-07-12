@@ -129,6 +129,10 @@ MultiIndex
   - `id_vars` column whose values will be repeated
   - `var_name` name of the new column for the varying values
   - `value_name` new name of the values column
+- `pivot_table()` by default aggregation is **mean**, average.
+  - `aggfunc=`, `"mean"`, `"sum"`, `"count"`, `"max"`
+  - `foods.pivot_table(values="Spend", index=["Gender", "Item"], columns="City", aggfunc="mean")` shows average of spends by gender and item, but for each city separate column.
+  - `foods.pivot_table(values="Spend", index="Item", columns=["Gender", "City"], aggfunc="mean")` creates column multiindex
 
 
 
