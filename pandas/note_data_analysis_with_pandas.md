@@ -134,7 +134,11 @@ MultiIndex
   - `foods.pivot_table(values="Spend", index=["Gender", "Item"], columns="City", aggfunc="mean")` shows average of spends by gender and item, but for each city separate column.
   - `foods.pivot_table(values="Spend", index="Item", columns=["Gender", "City"], aggfunc="mean")` creates column multiindex
 
-
+GroupBy
+- `groupby_obj.size()` returns a Series where index is group value and value is the count
+- `groupby_obj.first()` returns the first row for each group
+- `groupby_obj.last()` returns the last row for each group
+- `groupby_obj.get_group("group")` returns a DataFrame of original data which belong to the group
 
 
 
