@@ -139,7 +139,8 @@ GroupBy
 - `groupby_obj.first()` returns the first row for each group
 - `groupby_obj.last()` returns the last row for each group
 - `groupby_obj.get_group("group")` returns a DataFrame of original data which belong to the group
-
+- `df.groupby("group_column")["numeric_column"].sum()`
+- `df.groupby("group_column")[["numeric_col1", "numeric_col2"]].mean()`
 
 
 
