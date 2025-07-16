@@ -141,6 +141,9 @@ GroupBy
 - `groupby_obj.get_group("group")` returns a DataFrame of original data which belong to the group
 - `df.groupby("group_column")["numeric_column"].sum()`
 - `df.groupby("group_column")[["numeric_col1", "numeric_col2"]].mean()`
+- `df.groupby("group_column").agg({"numeric_col": "sum"})` does the same and return a DataFrame.
+- `df.groupby("group_column").agg({"numeric_col1": "sum", "numeric_col2": "max"})` allows different aggregation for each column.
+- GroupBy object supports `apply`
 
 
 
