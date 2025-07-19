@@ -145,6 +145,8 @@ GroupBy
 - `df.groupby("group_column").agg({"numeric_col1": "sum", "numeric_col2": "max"})` allows different aggregation for each column.
 - GroupBy object supports `apply`
 
+Merging dataframes
+- `pd.concat([week1, week2], keys=["Week 1", "Week 2"])` gives MultiIndex DataFrame to tell us which rows comes from which dataframe.
 
 
 
