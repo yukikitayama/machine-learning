@@ -148,6 +148,9 @@ GroupBy
 Merging dataframes
 - `pd.concat([week1, week2], keys=["Week 1", "Week 2"])` gives MultiIndex DataFrame to tell us which rows comes from which dataframe.
 - When `pd.concat` cannot find the right interconnection, it fills with NaN
+- `merge` `on` can work only when the column names are the same
+  - `left_on`, `right_on` can designate columns from each dataframe
+  - To remove one of the duplicated columns, follow `drop` method, `week2.merge(customers, how="left", left_on="Customer ID", right_on="ID").drop("ID", axis="columns")`
 
 
 
