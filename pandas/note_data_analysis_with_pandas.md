@@ -147,7 +147,7 @@ GroupBy
 
 Merging dataframes
 - `pd.concat([week1, week2], keys=["Week 1", "Week 2"])` gives MultiIndex DataFrame to tell us which rows comes from which dataframe.
-
+- When `pd.concat` cannot find the right interconnection, it fills with NaN
 
 
 
