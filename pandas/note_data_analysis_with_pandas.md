@@ -151,6 +151,8 @@ Merging dataframes
 - `merge` `on` can work only when the column names are the same
   - `left_on`, `right_on` can designate columns from each dataframe
   - To remove one of the duplicated columns, follow `drop` method, `week2.merge(customers, how="left", left_on="Customer ID", right_on="ID").drop("ID", axis="columns")`
-
+- `week1.merge(week2, how="inner", on="Customer ID", suffixes=[" - Week 1", " - Week 2"])`
+  - If the same ID occurs multiple times, pandas will store each possible combination of the values.
+- Multiple columns to `on` by `week1.merge(week2, how="inner", on=["Customer ID", "Food ID"])`
 
 
