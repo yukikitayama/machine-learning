@@ -154,5 +154,7 @@ Merging dataframes
 - `week1.merge(week2, how="inner", on="Customer ID", suffixes=[" - Week 1", " - Week 2"])`
   - If the same ID occurs multiple times, pandas will store each possible combination of the values.
 - Multiple columns to `on` by `week1.merge(week2, how="inner", on=["Customer ID", "Food ID"])`
-
+- `indicator=True` in `merge()` tells us the source of each row by `left_only`, `right_only`, or `both`.
+- To join by column and index, use combination of `left_on` and `right_index=True` like `week1.merge(customers, how="left", left_on="Customer ID", right_index=True)`.
+- `join()` method is a shortcut for `merge(left_index=True, right_index=True)` merge by index.
 
