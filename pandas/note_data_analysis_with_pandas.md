@@ -164,7 +164,25 @@ Working with dates and times
 - `pd.Timestamp(y, m, d, h, m, s)`
   - `pd.Timestamp(dt.date(2028, 10, 23))`
   - `pd.Timestamp("2025-01-01")`
-
+- `DatetimeIndex` is a range of `pd.Timestamp`
+- `pd.date_range(start="2012-09-09", freq="D", periods=25)` generates 25 days from 2012-09-09.
+```
+# Business day Mon-Fri
+pd.date_range(start="2025-01-01", end="2025-01-07", freq="B")
+# By default week starts on Sun
+pd.date_range(start="2025-01-01", end="2025-01-31", freq="W")
+# Start on Friday and jump weekly
+pd.date_range(start="2025-01-01", end="2025-01-31", freq="W-FRI")
+# Month end
+pd.date_range(start="2025-01-01", end="2025-12-31", freq="ME")
+# Month start
+pd.date_range(start="2025-01-01", end="2025-12-31", freq="MS")
+# Year end
+pd.date_range(start="2025-01-01", end="2050-12-31", freq="YE")
+# Generate 25 days.
+pd.date_range(start="2012-09-09", freq="D", periods=25)
+```
+- `pd.date_range(end="2013-10-31", freq="D", periods=20)` gives 20 days which end on 2013-10-31.
 
 
 
