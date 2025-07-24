@@ -158,3 +158,14 @@ Merging dataframes
 - To join by column and index, use combination of `left_on` and `right_index=True` like `week1.merge(customers, how="left", left_on="Customer ID", right_index=True)`.
 - `join()` method is a shortcut for `merge(left_index=True, right_index=True)` merge by index.
 
+Working with dates and times
+- Pandas `pd.Timestamp` is similar to Python's `datetimw` object but with expanded functionality
+- `DatetimeIndex` is an index of `pd.Timestamp` objects.
+- `pd.Timestamp(y, m, d, h, m, s)`
+  - `pd.Timestamp(dt.date(2028, 10, 23))`
+  - `pd.Timestamp("2025-01-01")`
+
+
+
+
+
