@@ -183,7 +183,14 @@ pd.date_range(start="2025-01-01", end="2050-12-31", freq="YE")
 pd.date_range(start="2012-09-09", freq="D", periods=25)
 ```
 - `pd.date_range(end="2013-10-31", freq="D", periods=20)` gives 20 days which end on 2013-10-31.
-
-
+- `df["date_column"].dt.day_name()` gives string representation of day of week.
+- `df["date_column"].dt.is_month_start`, `df["date_column"].dt.is_month_end`, `df["date_column"].dt.is_quarter_start`
+- `df.truncate(start, end)` works like slicing.
+- `+ pd.DateOffset(days=5)` adds 5 days to pandas timestamp object
+  - months, years, hours
+  - `stocks.index + pd.DateOffset(years=1, months=3, days=2, hours=14, minutes=23, seconds=12)`
+  - Can be used as freq argument `pd.date_range(start="1991-04-12", end="2023-04-12", freq=pd.DateOffset(years=1))`
+- `stocks.index + pd.tseries.offsets.MonthEnd()` makes each index to the end of a month
+  - `QuarterEnd()`
 
 
