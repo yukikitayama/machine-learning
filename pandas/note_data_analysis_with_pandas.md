@@ -192,5 +192,6 @@ pd.date_range(start="2012-09-09", freq="D", periods=25)
   - Can be used as freq argument `pd.date_range(start="1991-04-12", end="2023-04-12", freq=pd.DateOffset(years=1))`
 - `stocks.index + pd.tseries.offsets.MonthEnd()` makes each index to the end of a month
   - `QuarterEnd()`
+- 
 
 
